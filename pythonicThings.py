@@ -32,3 +32,7 @@
 # bisect_right just reverse
 # bisect similar to bisectleft but val<=x instead of val<x
 # insort functions are just insert(returned i from above functions,x)
+
+# Ceil with math.ceil
+# add den-1 to num 
+# eg: ceil(a/b) = (num+den-1)//den
