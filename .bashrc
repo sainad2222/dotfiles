@@ -97,6 +97,10 @@ alias python='python3'
 alias pip='pip3'
 alias codetest='code ~/edu/cp/test.py ~/edu/cp/test.txt'
 alias codetest2='code ~/edu/cp/test2.py ~/edu/cp/test2.txt'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -165,5 +169,16 @@ function extract {
     done
 fi
 }
-
+cpp-run() {
+    echo "Compiling file..."
+    g++ -std=c++17 -o "$1" "$1.cpp"
+    echo "Compiled! Enter input :D"
+    ./"$1"
+}
+c-run() {
+    echo "Compiling file..."
+    gcc -o "$1" "$1.c"
+    echo "Compiled! Enter input :D"
+    ./"$1"
+}
 IFS=$SAVEIFS
