@@ -100,6 +100,8 @@ alias codetest2='code ~/edu/cp/test2.py ~/edu/cp/test2.txt'
 alias clear='clear;ls'
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
+alias source-bash='source ~/.bashrc'
+alias source-vim='source ~/.vimrc'
 
 alias rm='rm -i'
 alias cp='cp -i'
