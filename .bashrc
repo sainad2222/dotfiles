@@ -184,4 +184,22 @@ c-run() {
     echo "Compiled! Enter input :D"
     ./"$1"
 }
+sync-dotfiles(){
+if [ $# -eq 0 ]
+then
+	# display usage if no parameters given
+	echo "enter commit message"
+	echo "USAGE: sync-dotfiles <commit message>"
+    exit 1
+else
+	cp ~/.bashrc ~/edu/dotfiles/.bashrc
+	cp ~/.vimrc ~/edu/dotfiles/.vimrc
+	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/testCasesPy.code-snippets
+	cd ~/edu/dotfiles
+	git status
+	git add .
+	git commit -m $1
+	git push -u origin master
+fi
+}
 IFS=$SAVEIFS
