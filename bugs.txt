@@ -1,0 +1,5 @@
+1. firefox live videos not playing
+sol. install ubuntu-restricted-packages by sudo apt install
+
+2. Earphones fix
+sol. tweak with slider on sound section
