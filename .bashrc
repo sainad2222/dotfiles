@@ -190,10 +190,10 @@ sync-dotfiles(){
 	cp ~/.vimrc ~/edu/dotfiles/.vimrc
 	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/testCasesPy.code-snippets
 	cd ~/edu/dotfiles
-    echo BEFORE: 
+    echo -------------------------BEFORE----------------------------------- 
 	git status
 	git add .
-    echo AFTER: 
+    echo --------------------AFTER----------------------------------------- 
     git status
     read -p 'commit-msg: ' commitmsg
 	git commit -m "${commitmsg}"
