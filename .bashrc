@@ -1,7 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-alias test='test'
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -187,21 +186,17 @@ c-run() {
     ./"$1"
 }
 sync-dotfiles(){
-if [ $# -eq 0 ]
-then
-	# display usage if no parameters given
-	echo "enter commit message"
-	echo "USAGE: sync-dotfiles <commit message>"
-    exit 1
-else
 	cp ~/.bashrc ~/edu/dotfiles/.bashrc
 	cp ~/.vimrc ~/edu/dotfiles/.vimrc
 	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/testCasesPy.code-snippets
 	cd ~/edu/dotfiles
+    echo BEFORE: 
 	git status
 	git add .
-	git commit -m $1
+    echo AFTER: 
+    git status
+    read -p 'commit-msg: ' commitmsg
+	git commit -m "${commitmsg}"
 	git push -u origin master
-fi
 }
 IFS=$SAVEIFS
