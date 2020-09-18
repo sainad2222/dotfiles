@@ -3,3 +3,9 @@ sol. install ubuntu-restricted-packages by sudo apt install
 
 2. Earphones fix
 sol. tweak with slider on sound section
+
+3. git string literals
+sol. Use "${var}" instead of $var
+
+4. vim copy pasting
+sol. sudo apt install vim-gtk

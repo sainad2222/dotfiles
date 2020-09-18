@@ -29,6 +29,7 @@ let mapleader=","       " leader is comma
 execute pathogen#infect()
 call pathogen#helptags()
 set clipboard=unnamedplus
+nmap <leader>y ggVG"+y''
 let g:fauxClip_always_use = 1
 " This happens after /etc/vim/vimrc(.local) are loaded, so it will override
 " any settinglis in these files.
