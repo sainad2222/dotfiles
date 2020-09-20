@@ -367,5 +367,13 @@
 		  "    return c"
 		],
 		"description": "binPow"
+	  },
+	  "ceil": {
+		"prefix": "ceil",
+		"body": [
+		  "def ceil(a, b):",
+		  "    return (a + b - 1) // b"
+		],
+		"description": "ceil"
 	  }
 }
