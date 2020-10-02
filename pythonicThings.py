@@ -36,3 +36,5 @@
 # Ceil with math.ceil
 # add den-1 to num 
 # eg: ceil(a/b) = (num+den-1)//den
+
+# int(log2(n)) gives length of binary number for n

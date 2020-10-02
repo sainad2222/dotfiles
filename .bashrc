@@ -200,4 +200,8 @@ sync-dotfiles(){
 	git commit -m "${commitmsg}"
 	git push -u origin master
 }
+mkdircd(){
+        mkdir $1
+        cd $1
+}
 IFS=$SAVEIFS
