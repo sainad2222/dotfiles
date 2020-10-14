@@ -99,6 +99,8 @@ alias codetest2='code ~/edu/cp/test2.py ~/edu/cp/test2.txt;exit'
 alias clearls='clear&&ls'
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
+alias zshrc='vim ~/.zshrc'
+alias source-zsh='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
 alias source-vim='source ~/.vimrc'
 
