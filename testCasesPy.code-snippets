@@ -41,23 +41,20 @@
 		],
 		"description": "taking four inputs"
 	  },
-	  "binary search template": {
+	  "binSearch": {
 		"prefix": "binSearch",
 		"body": [
 		  "def binary_search(array):",
-		  "    def condition(value):",
-		  "        pass",
-		  "",
-		  "    left, right = 0, len(array)",
-		  "    while left < right:",
-		  "        mid = left + (right - left) // 2",
-		  "        if condition(mid):",
-		  "            right = mid",
-		  "        else:",
-		  "            left = mid + 1",
-		  "    return left"
+		  "	left, right = 0, len(array)",
+		  "	while left <= right:",
+		  "		mid = left + (right - left) // 2",
+		  "		if condition(mid):",
+		  "			right = mid - 1",
+		  "		else:",
+		  "			left = mid + 1",
+		  "	return left"
 		],
-		"description": "binary search template"
+		"description": "binSearch"
 	  },
 	  "ternary search": {
 		"prefix": "ternary",
@@ -231,8 +228,8 @@
 		],
 		"description": "template"
 	  },
-	  "": {
-		"prefix": "",
+	  "fenwick": {
+		"prefix": "fenwick",
 		"body": [
 		  "class BIT:",
 		  "    def __init__(self, lis, n):",
