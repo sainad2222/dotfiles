@@ -38,3 +38,6 @@
 # eg: ceil(a/b) = (num+den-1)//den
 
 # int(log2(n)) gives length of binary number for n
+
+# s = s.replace("10","") ## python
+# s1 = regex_replace(s, regex("01"), ""); ## CPP
