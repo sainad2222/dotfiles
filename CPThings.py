@@ -34,10 +34,18 @@
 # insort functions are just insert(returned i from above functions,x)
 
 # Ceil with math.ceil
-# add den-1 to num 
+# add den-1 to num
 # eg: ceil(a/b) = (num+den-1)//den
 
 # int(log2(n)) gives length of binary number for n
 
 # s = s.replace("10","") ## python
 # s1 = regex_replace(s, regex("01"), ""); ## CPP
+
+# BIT trick-I
+# a+b = a/b + a&b
+# a^b = a/b - a&b
+## Proofs:
+### consider    a = 10001
+###             b = 01110
+###            a|b considers all same bits AND a&b considers all non same bits
