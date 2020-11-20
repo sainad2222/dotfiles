@@ -78,24 +78,27 @@
 		],
 		"description": "ternary search"
 	  },
-	  "Seive": {
+	  "primeSeive": {
 		"prefix": "primeSeive",
 		"body": [
-		  "def SieveOfEratosthenes(n): ",
-		  "    prime = [True for i in range(n + 1)] ",
+		  "def primeSeive(n):",
+		  "    prime = [True for i in range(n + 1)]",
+		  "    primes = []",
 		  "    p = 2",
-		  "    while (p * p <= n): ",
-		  "        if (prime[p] == True): ",
-		  "            for i in range(p * 2, n + 1, p): ",
+		  "    while (p * p <= n):",
+		  "        if (prime[p] == True):",
+		  "            for i in range(p * 2, n + 1, p):",
 		  "                prime[i] = False",
 		  "        p += 1",
-		  "    prime[0]= False",
-		  "    prime[1]= False ",
-		  "    for p in range(n + 1): ",
-		  "        if prime[p]: ",
-		  "            print(p)"
+		  "    prime[0] = False",
+		  "    prime[1] = False",
+		  "    for p in range(n + 1):",
+		  "        if prime[p]:",
+		  "            primes.append(p)",
+		  "    return primes",
+		  ""
 		],
-		"description": "Seive"
+		"description": "primeSeive"
 	  },
 	  "prime number check": {
 		"prefix": "isPrime",
@@ -385,18 +388,12 @@
 		  "",
 		  "",
 		  "",
-		  "int i = 0,j = 0,k = 0;",
 		  "#define INT             long long",
 		  "#define mod             1000000007",
 		  "#define inf             (int)1e18",
 		  "#define endl            \"\\n\"",
-		  "#define FOR(a, b)       for (int i = a; i < b;i++)",
 		  "#define inpArr(vec)          for(auto &it:vec) cin>>it",
 		  "#define outArr(vec)          for(auto &it:vec) cout<<it<<\" \";cout<<endl;",
-		  "#define read(n) 			INT n;cin >> n;",
-		  "#define readTwo(x, y) 		INT x, y;cin>>x>>y;",
-		  "#define readThree(x, y, z) 	INT x, y, z;cin>>x>>y>>z;",
-		  "#define readFour(x, y, z,a) INT x, y, z, a;cin>>x>>y>>z>>a;",
 		  "",
 		  "",
 		  "void solve(){",

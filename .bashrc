@@ -207,3 +207,4 @@ mkdircd(){
         cd $1
 }
 IFS=$SAVEIFS
+PATH=/home/sainath/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sainath/Software/scilab-6.1.0/bin

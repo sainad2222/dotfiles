@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git extract vi-mode)
+plugins=(zsh-autosuggestions git extract)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -101,7 +101,9 @@ source $ZSH/oh-my-zsh.sh
 alias python='python3'
 alias pip='pip3'
 alias codetest='code ~/edu/cp/test.py ~/edu/cp/test.txt;exit'
-alias codetest2='code ~/edu/cp/test2.py ~/edu/cp/test2.txt;exit'
+alias codetest2='code ~/edu/cp/test2.py;exit'
+alias type-python='mlt sample python'
+alias type-cpp='mlt sample cpp'
 alias clearls='clear&&ls'
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
@@ -153,4 +155,9 @@ mkdircd(){
         mkdir $1
         cd $1
 }
-
+stresstest(){
+        python gen.py > test2.txt
+        python test.py < test2.txt > out1.txt
+        python test2.py < test2.txt > out2.txt
+        diff out1.txt out2.txt
+}
