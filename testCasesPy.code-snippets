@@ -578,5 +578,42 @@
 		  ""
 		],
 		"description": "mergeSort"
+	  },
+	  "unique": {
+		"prefix": "unique",
+		"body": [
+		  "def unique(lis):",
+		  "    prev = -1",
+		  "    res = []",
+		  "    for i in lis:",
+		  "        if i != prev:",
+		  "            res.append(i)",
+		  "            prev = i",
+		  "    return res"
+		],
+		"description": "unique"
+	  },
+	  "Prime factorization": {
+		"prefix": "primeFactors",
+		"body": [
+		  "def primeFactors(n):",
+		  "    dic = defaultdict(int)",
+		  "    factors = []",
+		  "    while n % 2 == 0:",
+		  "        dic[2] += 1",
+		  "        n = n // 2",
+		  "    ",
+		  "    i = 3",
+		  "    while i * i <= n:",
+		  "        while n % i == 0:",
+		  "            dic[i] += 1",
+		  "            n = n // i",
+		  "        i += 2",
+		  "    ",
+		  "    if n > 2:",
+		  "        dic[n] += 1",
+		  "    return dic"
+		],
+		"description": "Prime factorization"
 	  }
 }
