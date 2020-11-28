@@ -102,6 +102,8 @@ alias python='python3'
 alias pip='pip3'
 alias codetest='code ~/edu/cp/test.py ~/edu/cp/test.txt;exit'
 alias codetest2='code ~/edu/cp/test2.py;exit'
+alias geanytest='geany ~/edu/cp/test.py ~/edu/cp/test.txt &'
+alias geanytest2='geany ~/edu/cp/test2.py &'
 alias type-python='mlt sample python'
 alias type-cpp='mlt sample cpp'
 alias clearls='clear&&ls'
@@ -152,13 +154,28 @@ sync-dotfiles(){
 	git commit -m "${commitmsg}"
 	git push -u origin master
 }
+snippet-gen(){
+    python ~/edu/dotfiles/snippet_generator.py < test.txt
+}
 mkdircd(){
         mkdir $1
         cd $1
 }
 stresstest(){
-        python gen.py > test2.txt
-        python test.py < test2.txt > out1.txt
-        python test2.py < test2.txt > out2.txt
-        diff out1.txt out2.txt
+        i=1
+        while :
+        do
+                python gen.py $i > test2.txt
+                python test.py < test2.txt > out1.txt
+                python test2.py < test2.txt > out2.txt
+                diff -Z out1.txt out2.txt > /dev/null || break
+                echo "Passed: " $i
+                i=$((i+1))
+        done
+        echo "WA on " $i
+        cat test2.txt
+        echo "Your answer: "
+        cat out1.txt
+        echo "Correct answer: "
+        cat out2.txt
 }
