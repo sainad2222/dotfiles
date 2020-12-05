@@ -1,4 +1,93 @@
-# If you come from bash you might have to change your $PATH.
+# CUSTOM ALIASES
+alias python='python3'
+alias pip='pip3'
+alias codetest='code ~/edu/cp/test.py ~/edu/cp/test.txt;exit'
+alias codetest2='code ~/edu/cp/test2.py;exit'
+alias geanytest='geany ~/edu/cp/test.py ~/edu/cp/test.txt &'
+alias geanytest2='geany ~/edu/cp/test2.py &'
+alias type-python='mlt sample python'
+alias type-cpp='mlt sample cpp'
+alias clearls='clear&&ls'
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
+alias zshrc='vim ~/.zshrc'
+alias source-bash='source ~/.bashrc'
+alias source-zsh='source ~/.zshrc'
+alias vimrc='nvim ~/.vimrc'
+alias bashrc='nvim ~/.bashrc'
+alias zshrc='nvim ~/.zshrc'
+alias source-zsh='source ~/.zshrc'
+alias source-bash='source ~/.bashrc'
+alias nvimtest='nvim -p ~/edu/cp/test.py ~/edu/cp/test.txt'
+alias nvimtest2='nvim ~/edu/cp/test2.py'
+alias nvimtest3='nvim ~/edu/cp/test.cpp'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias input='gedit ~/edu/cp/test.txt'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias open='xdg-open'
+
+cpp-run() {
+    echo "Compiling file..."
+    g++ -std=c++17 -o "$1" "$1.cpp"
+    echo "Compiled! Enter input :D"
+    ./"$1"
+}
+c-run() {
+    echo "Compiling file..."
+    gcc -o "$1" "$1.c"
+    echo "Compiled! Enter input :D"
+    ./"$1"
+}
+testplag(){
+    cp ~/edu/cp/test.py ~/edu/cp/jplag/ex1.py
+    cp ~/edu/cp/test2.py ~/edu/cp/jplag/ex2.py
+    java -jar ~/edu/cp/jplag/jplag-2.12.1-SNAPSHOT-jar-with-dependencies.jar -l python3 -c ~/edu/cp/jplag/ex1.py ~/edu/cp/jplag/ex2.py
+    xdg-open result/index.html
+}
+sync-dotfiles(){
+    cp ~/.zshrc ~/edu/dotfiles/.zshrc
+	cp ~/.config/nvim/init.vim ~/edu/dotfiles/.nvimrc
+	cp ~/.config/nvim/UltiSnips/all.snippets ~/edu/dotfiles/nvim.snippets
+	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/testCasesPy.code-snippets
+    cp ~/.config/geany/snippets.conf ~/edu/dotfiles/snippets.conf
+	cd ~/edu/dotfiles
+    echo -------------------------BEFORE-----------------------------------
+	git status
+	git add .
+    echo --------------------AFTER-----------------------------------------
+    git status
+    echo "Enter commit message: "
+    read "commitmsg"
+	git commit -m "${commitmsg}"
+	git push -u origin master
+}
+snippet-gen(){
+    python ~/edu/dotfiles/snippet_generator.py < test.txt
+}
+mkdircd(){
+        mkdir $1
+        cd $1
+}
+stresstest(){
+        i=1
+        while :
+        do
+                python gen.py $i > test2.txt
+                python test.py < test2.txt > out1.txt
+                python test2.py < test2.txt > out2.txt
+                diff -Z out1.txt out2.txt > /dev/null || break
+                echo "Passed: " $i
+                i=$((i+1))
+        done
+        echo "WA on " $i
+        cat test2.txt
+        echo "Your answer: "
+        cat out1.txt
+        echo "Correct answer: "
+        cat out2.txt
+}
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -97,85 +186,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-# CUSTOM ALIASES
-alias python='python3'
-alias pip='pip3'
-alias codetest='code ~/edu/cp/test.py ~/edu/cp/test.txt;exit'
-alias codetest2='code ~/edu/cp/test2.py;exit'
-alias geanytest='geany ~/edu/cp/test.py ~/edu/cp/test.txt &'
-alias geanytest2='geany ~/edu/cp/test2.py &'
-alias type-python='mlt sample python'
-alias type-cpp='mlt sample cpp'
-alias clearls='clear&&ls'
-alias vimrc='vim ~/.vimrc'
-alias bashrc='vim ~/.bashrc'
-alias zshrc='vim ~/.zshrc'
-alias source-bash='source ~/.bashrc'
-alias source-zsh='source ~/.zshrc'
-alias source-vim='source ~/.vimrc'
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias open='xdg-open'
-
-cpp-run() {
-    echo "Compiling file..."
-    g++ -std=c++17 -o "$1" "$1.cpp"
-    echo "Compiled! Enter input :D"
-    ./"$1"
-}
-c-run() {
-    echo "Compiling file..."
-    gcc -o "$1" "$1.c"
-    echo "Compiled! Enter input :D"
-    ./"$1"
-}
-testplag(){
-    cp ~/edu/cp/test.py ~/edu/cp/jplag/ex1.py
-    cp ~/edu/cp/test2.py ~/edu/cp/jplag/ex2.py
-    java -jar ~/edu/cp/jplag/jplag-2.12.1-SNAPSHOT-jar-with-dependencies.jar -l python3 -c ~/edu/cp/jplag/ex1.py ~/edu/cp/jplag/ex2.py
-    xdg-open result/index.html
-}
-sync-dotfiles(){
-	cp ~/.bashrc ~/edu/dotfiles/.bashrc
-    cp ~/.zshrc ~/edu/dotfiles/.zshrc
-	cp ~/.vimrc ~/edu/dotfiles/.vimrc
-	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/testCasesPy.code-snippets
-    cp ~/.config/geany/snippets.conf ~/edu/dotfiles/snippets.conf
-	cd ~/edu/dotfiles
-    echo -------------------------BEFORE-----------------------------------
-	git status
-	git add .
-    echo --------------------AFTER-----------------------------------------
-    git status
-    echo "Enter commit message: "
-    read "commitmsg"
-	git commit -m "${commitmsg}"
-	git push -u origin master
-}
-snippet-gen(){
-    python ~/edu/dotfiles/snippet_generator.py < test.txt
-}
-mkdircd(){
-        mkdir $1
-        cd $1
-}
-stresstest(){
-        i=1
-        while :
-        do
-                python gen.py $i > test2.txt
-                python test.py < test2.txt > out1.txt
-                python test2.py < test2.txt > out2.txt
-                diff -Z out1.txt out2.txt > /dev/null || break
-                echo "Passed: " $i
-                i=$((i+1))
-        done
-        echo "WA on " $i
-        cat test2.txt
-        echo "Your answer: "
-        cat out1.txt
-        echo "Correct answer: "
-        cat out2.txt
-}
