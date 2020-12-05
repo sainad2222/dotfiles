@@ -1,2 +1,2 @@
 # dotfiles
-Dotfiles mainly vimrc
+My personal dotfiles(mainly rc's and editor snippets)
