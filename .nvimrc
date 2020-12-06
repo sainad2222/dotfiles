@@ -59,12 +59,18 @@ vnoremap d "_d
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <C-l> :let @/=""<CR>
 
-autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < ~/edu/cp/test.txt<CR>
-autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o test && ./test < ~/edu/cp/test.txt <CR>
+if filereadable(expand('%:p:r'))
+	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < %:p:r<CR>
+	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
+else
+	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < ~/edu/cp/test<CR>
+	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
+endif
 
 map<C-a> ggVG
 map<C-c> "+y
 map<C-v> dpggdd
+map <space><space> gt
 
 " MISC
 set number
