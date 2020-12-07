@@ -81,7 +81,7 @@ set autoindent
 " get rid of stupid next line commenting
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Persistent undo and redo 
+" Persistent undo and redo(Very imp)
 let s:undoDir = "/tmp/.undodir_" . $USER
 if !isdirectory(s:undoDir)
     call mkdir(s:undoDir, "", 0700)

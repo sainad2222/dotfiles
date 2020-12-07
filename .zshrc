@@ -1,16 +1,12 @@
 # CUSTOM ALIASES
+# utility shortcuts
 alias python='python3'
 alias pip='pip3'
-alias codetest='code ~/edu/cp/test.py ~/edu/cp/test;exit'
-alias codetest2='code ~/edu/cp/test2.py;exit'
-alias geanytest='geany ~/edu/cp/test.py ~/edu/cp/test &'
-alias geanytest2='geany ~/edu/cp/test2.py &'
-alias type-python='mlt sample python'
-alias type-cpp='mlt sample cpp'
 alias clearls='clear&&ls'
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias source-bash='source ~/.bashrc'
 alias source-zsh='source ~/.zshrc'
 alias vimrc='nvim ~/.vimrc'
@@ -18,15 +14,25 @@ alias bashrc='nvim ~/.bashrc'
 alias zshrc='nvim ~/.zshrc'
 alias source-zsh='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+alias open='xdg-open'
+
+# CP shortcuts
+alias codetest='code ~/edu/cp/test.py ~/edu/cp/test;exit'
+alias codetest2='code ~/edu/cp/test2.py;exit'
+alias geanytest='geany ~/edu/cp/test.py ~/edu/cp/test &'
+alias geanytest2='geany ~/edu/cp/test2.py &'
 alias nvimtest='nvim -p ~/edu/cp/test.py ~/edu/cp/test'
 alias nvimtest2='nvim -p ~/edu/cp/test2.py ~/edu/cp/test2'
 alias nvimtest3='nvim -p ~/edu/cp/test.cpp ~/edu/cp/test3'
-alias nvimrc='nvim ~/.config/nvim/init.vim'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias open='xdg-open'
 
+# MISC
+alias type-python='mlt sample python'
+alias type-cpp='mlt sample cpp'
+
+# Custom scripts(Mostly for CP)
 cpp-run() {
     echo "Compiling file..."
     g++ -std=c++17 -o "$1" "$1.cpp"
