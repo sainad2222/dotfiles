@@ -35,7 +35,7 @@ My personal dotfiles(mainly rc's and editor snippets)
   <a href='https://github.com/sainad2222/dotfiles/blob/master/nvim.snippets'>nvim.snippets</a>
 </details>
 
-# MISC
+### MISC
 
 <details>
   <summary>Geany snippet generator</summary>
