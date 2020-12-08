@@ -2,10 +2,6 @@
 My personal dotfiles(mainly rc's and editor snippets)
 
 ## RC's
-  ![Neovim RC](dotfiles/.nvimrc)
-  
-  ![Oh my zsh RC](dotfiles/.zshrc)
-  
 
 <details>
   <summary>Neovim</summary>
