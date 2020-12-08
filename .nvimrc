@@ -2,6 +2,7 @@ set encoding=utf-8
 let mapleader=","
 let g:mapleader=","
 set clipboard=unnamedplus
+set shell=/usr/bin/zsh
 filetype on
 filetype indent on
 syntax enable
@@ -31,6 +32,9 @@ Plug 'chiel92/vim-autoformat'
 
 " vim sneak for fast motion
 Plug 'justinmk/vim-sneak'
+
+" one tab to rule them all
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -63,9 +67,10 @@ if filereadable(expand('%:p:r'))
 	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < %:p:r<CR>
 	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
 else
-	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < ~/edu/cp/test<CR>
-	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
+	autocmd vimEnter *.py map <F5> :w <CR>:sp<CR>:term python3 %<CR>
+	autocmd vimEnter *.cpp map <F5> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 endif
+autocmd TermOpen * startinsert
 
 map<C-a> ggVG
 map<C-c> "+y
