@@ -66,9 +66,11 @@ nnoremap <C-l> :let @/=""<CR>
 if filereadable(expand('%:p:r'))
 	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < %:p:r<CR>
 	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
+	autocmd vimEnter *.py map <F6> :w <CR>:sp<CR>:term python3 %<CR>
+	autocmd vimEnter *.cpp map <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 else
-	autocmd vimEnter *.py map <F5> :w <CR>:sp<CR>:term python3 %<CR>
-	autocmd vimEnter *.cpp map <F5> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
+	autocmd vimEnter *.py map <F6> :w <CR>:sp<CR>:term python3 %<CR>
+	autocmd vimEnter *.cpp map <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 endif
 autocmd TermOpen * startinsert
 

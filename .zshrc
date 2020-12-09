@@ -1,5 +1,6 @@
 # CUSTOM ALIASES
 # utility shortcuts
+alias install='sudo dpkg -i'
 alias python='python3'
 alias pip='pip3'
 alias clearls='clear&&ls'
