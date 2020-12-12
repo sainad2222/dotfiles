@@ -1,5 +1,7 @@
 set encoding=utf-8
- 
+let mapleader=","
+let g:mapleader=","
+
 call plug#begin('~/.vim/plugged')
 
 " coc autocompletion
@@ -79,14 +81,13 @@ set number
 set tabstop=4
 set shiftwidth=4
 set mouse=a
-let mapleader=","
-let g:mapleader=","
 set clipboard=unnamedplus
 set shell=/usr/bin/zsh
 filetype on
 filetype indent on
 syntax enable
 set autoindent
+set nowrap
 
 " coc configs (extra ref gihub for explainations)
 set hidden
