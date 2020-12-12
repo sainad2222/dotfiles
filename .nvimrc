@@ -93,9 +93,10 @@ set nowrap
 set hidden
 
 autocmd filetype python inoremap <cr> <Esc>:AutoformatLine<CR>o
+autocmd filetype cpp inoremap <cr> <Esc>:AutoformatLine<CR>o
 
 " GoTo code navigation.
-nmap <silent> <leader>d <Plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -111,7 +112,7 @@ endfunction
 " get rid of stupid next line commenting
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Persistent undo and redo(Very imp)
+" Persistent undo and redo(!!!Very imp)
 let s:undoDir = "/tmp/.undodir_" . $USER
 if !isdirectory(s:undoDir)
     call mkdir(s:undoDir, "", 0700)
