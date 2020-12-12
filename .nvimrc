@@ -6,11 +6,13 @@ set shell=/usr/bin/zsh
 filetype on
 filetype indent on
 syntax enable
+" TextEdit might fail if hidden is not set.
+set hidden
  
 call plug#begin('~/.vim/plugged')
 
-" deoplete for autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" coc autocompletion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " better status bar
 Plug 'vim-airline/vim-airline'
@@ -38,8 +40,8 @@ Plug 'ervandew/supertab'
 
 call plug#end()
 
-" deoplete configurations
-let g:deoplete#enable_at_startup = 1
+" autopairs configs
+au FileType python let b:AutoPairs = {}
 
 " autosave configs
 let g:auto_save        = 1
@@ -62,6 +64,8 @@ nnoremap d "_d
 vnoremap d "_d
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <C-l> :let @/=""<CR>
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 if filereadable(expand('%:p:r'))
 	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < %:p:r<CR>
@@ -95,3 +99,4 @@ if !isdirectory(s:undoDir)
 endif
 let &undodir=s:undoDir
 set undofile
+
