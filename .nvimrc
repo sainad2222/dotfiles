@@ -1,13 +1,4 @@
 set encoding=utf-8
-let mapleader=","
-let g:mapleader=","
-set clipboard=unnamedplus
-set shell=/usr/bin/zsh
-filetype on
-filetype indent on
-syntax enable
-" TextEdit might fail if hidden is not set.
-set hidden
  
 call plug#begin('~/.vim/plugged')
 
@@ -59,7 +50,6 @@ let g:sneak#label = 1
 " keymappings
 imap ii <esc>
 nmap <leader>y ggVG"+y''
-noremap <F3> :Autoformat<CR>
 nnoremap d "_d
 vnoremap d "_d
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
@@ -67,6 +57,7 @@ nnoremap <C-l> :let @/=""<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+noremap <F3> :Autoformat<CR>
 if filereadable(expand('%:p:r'))
 	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < %:p:r<CR>
 	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
@@ -88,7 +79,34 @@ set number
 set tabstop=4
 set shiftwidth=4
 set mouse=a
+let mapleader=","
+let g:mapleader=","
+set clipboard=unnamedplus
+set shell=/usr/bin/zsh
+filetype on
+filetype indent on
+syntax enable
 set autoindent
+
+" coc configs (extra ref gihub for explainations)
+set hidden
+
+autocmd filetype python inoremap <cr> <Esc>:AutoformatLine<CR>o
+
+" GoTo code navigation.
+nmap <silent> <leader>d <Plug>(coc-definition)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 " get rid of stupid next line commenting
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
