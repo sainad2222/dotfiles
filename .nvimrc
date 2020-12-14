@@ -31,6 +31,9 @@ Plug 'justinmk/vim-sneak'
 " one tab to rule them all
 Plug 'ervandew/supertab'
 
+" undo tree
+Plug 'mbbill/undotree'
+
 call plug#end()
 
 " autopairs configs
@@ -48,6 +51,10 @@ let g:NERDDefaultAlign = 'left'
 
 " sneak motion configs
 let g:sneak#label = 1
+
+" undotree configs
+nnoremap U :UndotreeToggle<CR>
+
  
 " keymappings
 imap ii <esc>
@@ -79,6 +86,10 @@ map <space><space> gt
 " MISC
 set number
 set tabstop=4
+set softtabstop=4
+set expandtab
+set noswapfile
+set nobackup
 set shiftwidth=4
 set mouse=a
 set clipboard=unnamedplus
@@ -95,6 +106,7 @@ set hidden
 autocmd filetype python inoremap <cr> <Esc>:AutoformatLine<CR>o
 autocmd filetype cpp inoremap <cr> <Esc>:AutoformatLine<CR>o
 
+inoremap <silent><expr> <c-space> coc#refresh()
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 
