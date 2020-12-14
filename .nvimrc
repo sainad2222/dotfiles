@@ -1,6 +1,27 @@
-set encoding=utf-8
+set encoding=utf-8          " not needed for nvim but ...
+" setting leader
 let mapleader=","
 let g:mapleader=","
+
+" MISC
+set updatetime=100          " default 4000ms results in poor user experience
+set shortmess+=c            " don't show short messages like PATTERN NOT FOUND during searchs
+set nu rnu                  " setting realtive numbers to lines
+set tabstop=4               " sets tab to 4 spaces
+set softtabstop=4           " inserts 4 spaces instead of 1 tab
+set expandtab               " Use appropriate no of tabs acc to indentation
+set shiftwidth=4            " useful in indentation
+set noswapfile              " no swap files plz
+set nobackup                " no backup files too
+set mouse=a                 " use mouse in vim
+set clipboard=unnamedplus   " use system clipboard not just regiesters(imp)
+set shell=/usr/bin/zsh      " set zsh as shell
+filetype on                 " to detect filetypes
+filetype indent on          " indent based on filetype
+syntax enable               " looks good highlights acc to syntax
+set autoindent              " autoindent on 
+set nowrap                  " don't wrap plz it's ugly
+set hidden                  " When on a buffer becomes hidden when it is abandoned
 
 call plug#begin('~/.vim/plugged')
 
@@ -55,6 +76,8 @@ let g:NERDDefaultAlign = 'left'
 
 " sneak motion configs
 let g:sneak#label = 1
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 " undotree configs
 nnoremap U :UndotreeToggle<CR>
@@ -73,45 +96,33 @@ map<C-a> ggVG
 map<C-c> "+y
 map <space><space> gt
 noremap <F3> :Autoformat<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
+" Custom running py and cpp files for CP
 if filereadable(expand('%:p:r'))
-	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < %:p:r<CR>
-	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
-	autocmd vimEnter *.py map <F6> :w <CR>:sp<CR>:term python3 %<CR>
-	autocmd vimEnter *.cpp map <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
+	autocmd filetype python map <F5> :w <CR>:!python3 % < %:p:r<CR>
+	autocmd filetype cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
+	autocmd filetype python map <F6> :w <CR>:sp<CR>:term python3 %<CR>
+	autocmd filetype cpp map <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 else
-	autocmd vimEnter *.py map <F6> :w <CR>:sp<CR>:term python3 %<CR>
-	autocmd vimEnter *.cpp map <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
+	autocmd filetype python map <F6> :w <CR>:sp<CR>:term python3 %<CR>
+	autocmd filetype cpp map <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 endif
 autocmd TermOpen * startinsert
 
-" MISC
-set nu rnu
-set tabstop=4
-set softtabstop=4
-set expandtab
-set noswapfile
-set nobackup
-set shiftwidth=4
-set mouse=a
-set clipboard=unnamedplus
-set shell=/usr/bin/zsh
-filetype on
-filetype indent on
-syntax enable
-set autoindent
-set nowrap
+" TODO this process is too slow you may consider some treesitter to do parsing faster
+" autocmd filetype python inoremap <cr> <Esc>:AutoformatLine<CR>o
+" autocmd filetype cpp inoremap <cr> <Esc>:AutoformatLine<CR>o
 
-" coc configs (extra ref gihub for explainations)
-set hidden
-
-autocmd filetype python inoremap <cr> <Esc>:AutoformatLine<CR>o
-autocmd filetype cpp inoremap <cr> <Esc>:AutoformatLine<CR>o
-
+" Coc configs
+" Trigger suggestions
 inoremap <silent><expr> <c-space> coc#refresh()
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-
+" documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
