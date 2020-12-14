@@ -32,6 +32,7 @@ alias nvimtest3='nvim -p ~/edu/cp/test.cpp ~/edu/cp/test3'
 # MISC
 alias type-python='mlt sample python'
 alias type-cpp='mlt sample cpp'
+alias fd=fdfind
 
 # Custom scripts(Mostly for CP)
 cpp-run() {
@@ -180,5 +181,5 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

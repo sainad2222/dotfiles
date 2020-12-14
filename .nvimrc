@@ -34,6 +34,10 @@ Plug 'ervandew/supertab'
 " undo tree
 Plug 'mbbill/undotree'
 
+" fzf finally! yay
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " autopairs configs
@@ -65,8 +69,11 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <C-l> :let @/=""<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-
+map<C-a> ggVG
+map<C-c> "+y
+map <space><space> gt
 noremap <F3> :Autoformat<CR>
+
 if filereadable(expand('%:p:r'))
 	autocmd vimEnter *.py map <F5> :w <CR>:!python3 % < %:p:r<CR>
 	autocmd vimEnter *.cpp map <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
@@ -78,13 +85,8 @@ else
 endif
 autocmd TermOpen * startinsert
 
-map<C-a> ggVG
-map<C-c> "+y
-map<C-v> dpggdd
-map <space><space> gt
-
 " MISC
-set number
+set nu rnu
 set tabstop=4
 set softtabstop=4
 set expandtab
