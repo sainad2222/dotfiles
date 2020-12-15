@@ -60,6 +60,9 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" vim be good
+Plug 'ThePrimeagen/vim-be-good'
+
 call plug#end()
 
 " autopairs configs
