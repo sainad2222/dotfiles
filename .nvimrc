@@ -26,50 +26,22 @@ set hidden                  " When on a buffer becomes hidden when it is abandon
 
 call plug#begin('~/.vim/plugged')
 
-" coc autocompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" better status bar
-Plug 'vim-airline/vim-airline'
-
-" Autocomplete bracket pairs
-Plug 'jiangmiao/auto-pairs'
-
-" Commenting and uncommenting
-Plug 'scrooloose/nerdcommenter'
-
-" Python indent (follows the PEP8 style)
-Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
-
-" Ultimate snippets solution(as they say)
-Plug 'sirver/ultisnips'
-
-" Auto formatting
-Plug 'chiel92/vim-autoformat'
-
-" vim sneak for fast motion
-Plug 'justinmk/vim-sneak'
-
-" one tab to rule them all
-Plug 'ervandew/supertab'
-
-" undo tree
-Plug 'mbbill/undotree'
-
-" fzf finally! yay
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}             " coc autocompletion
+Plug 'vim-airline/vim-airline'                              " better status bar
+Plug 'jiangmiao/auto-pairs'                                 " Autocomplete bracket pairs
+Plug 'scrooloose/nerdcommenter'                             " Commenting and uncommenting
+Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}     " Python indent (follows the PEP8 style)
+Plug 'sirver/ultisnips'                                     " Ultimate snippets solution(as they say)
+Plug 'chiel92/vim-autoformat'                               " Auto formatting
+Plug 'justinmk/vim-sneak'                                   " vim sneak for fast motion
+Plug 'ervandew/supertab'                                    " one tab to rule them all
+Plug 'mbbill/undotree'                                      " undo tree
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " fzf finally! yay
 Plug 'junegunn/fzf.vim'
-
-" vim be good
-Plug 'ThePrimeagen/vim-be-good'
-
-" colorscheme gruvbox 
-Plug 'morhetz/gruvbox'
+Plug 'ThePrimeagen/vim-be-good'                             " primeagen's vim training plugin
+Plug 'gruvbox-community/gruvbox'                            " colorscheme gruvbox
 
 call plug#end()
-
-colorscheme gruvbox
-set background=dark
 
 " autopairs configs
 au FileType python let b:AutoPairs = {}
@@ -92,32 +64,41 @@ map F <Plug>Sneak_S
 " undotree configs
 nnoremap U :UndotreeToggle<CR>
 
+" gruvbox configs
+colorscheme gruvbox
+set background=dark
 
- 
 " keymappings
 imap ii <esc>
+
 nmap <leader>y ggVG"+y''
 nnoremap d "_d
 vnoremap d "_d
 vnoremap <leader>p p
 vnoremap p "_dP
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
-nnoremap <leader>l :let @/=""<CR>
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
 map<C-a> ggVG
 map<C-c> "+y
+
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <leader>l :let @/=""<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap < <gv
+vnoremap > >gv
+
 map <space><space> gt
-noremap <F3> :Autoformat<CR>
 nnoremap <C-h> :wincmd h<CR>
 nnoremap <C-j> :wincmd j<CR>
 nnoremap <C-k> :wincmd k<CR>
 nnoremap <C-l> :wincmd l<CR>
+
 nnoremap <leader>8 :resize +5<CR>
 nnoremap <leader>2 :resize -5<CR>
 nnoremap <leader>4 :vertical resize +5<CR>
 nnoremap <leader>6 :vertical resize -5<CR>
 
+noremap <F3> :Autoformat<CR>
 autocmd filetype python inoremap <F5> <esc>
 autocmd filetype cpp inoremap <F5> <esc>
 autocmd filetype python inoremap <F6> <esc>
@@ -135,10 +116,6 @@ else
     autocmd filetype cpp nnoremap <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 endif
 autocmd TermOpen * startinsert
-
-" TODO this process is too slow you may consider some treesitter to do parsing faster
-" autocmd filetype python inoremap <cr> <Esc>:AutoformatLine<CR>o
-" autocmd filetype cpp inoremap <cr> <Esc>:AutoformatLine<CR>o
 
 " Coc configs
 " Trigger suggestions
