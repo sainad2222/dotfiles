@@ -63,7 +63,13 @@ Plug 'junegunn/fzf.vim'
 " vim be good
 Plug 'ThePrimeagen/vim-be-good'
 
+" colorscheme gruvbox 
+Plug 'morhetz/gruvbox'
+
 call plug#end()
+
+colorscheme gruvbox
+set background=dark
 
 " autopairs configs
 au FileType python let b:AutoPairs = {}
@@ -85,6 +91,7 @@ map F <Plug>Sneak_S
 
 " undotree configs
 nnoremap U :UndotreeToggle<CR>
+
 
  
 " keymappings
@@ -111,12 +118,16 @@ nnoremap <leader>2 :resize -5<CR>
 nnoremap <leader>4 :vertical resize +5<CR>
 nnoremap <leader>6 :vertical resize -5<CR>
 
+autocmd filetype python inoremap <F5> <esc>
+autocmd filetype cpp inoremap <F5> <esc>
+autocmd filetype python inoremap <F6> <esc>
+autocmd filetype cpp inoremap <F6> <esc>
 " Custom running py and cpp files for CP
 if filereadable(expand('%:p:r'))
     autocmd filetype python nnoremap <F5> :w <CR>:!python3 % < %:p:r<CR>
     autocmd filetype cpp nnoremap <F5> :w <CR>:!g++ --std=c++17 % -o testtt && ./testtt < ~/edu/cp/test3<CR>:!rm -f testtt<CR>
     autocmd filetype python nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>
-    autocmd filetype cpp nnoremap <<F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
+    autocmd filetype cpp nnoremap <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 else
     autocmd filetype python nnoremap <F5> :echo 'No input file'<CR>
     autocmd filetype cpp nnoremap <F5> :echo 'No input file'<CR>
@@ -134,6 +145,7 @@ autocmd TermOpen * startinsert
 inoremap <silent><expr> <c-space> coc#refresh()
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
 " documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
