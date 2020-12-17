@@ -32,7 +32,8 @@ My personal dotfiles(mainly rc's and editor snippets)
 
 <details>
   <summary>Neovim</summary>
-  <a href='https://github.com/sainad2222/dotfiles/blob/master/nvim.snippets'>nvim.snippets</a>
+  Moved to
+  <a href='https://github.com/sainad2222/neovim_config/tree/master/UltiSnips'>nvim.snippets</a>
 </details>
 
 ### MISC
