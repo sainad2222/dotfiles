@@ -61,6 +61,10 @@ let g:sneak#label = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
+" supertab configs
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " undotree configs
 nnoremap U :UndotreeToggle<CR>
 
