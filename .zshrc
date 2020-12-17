@@ -53,6 +53,18 @@ testplag(){
     java -jar ~/edu/cp/jplag/jplag-2.12.1-SNAPSHOT-jar-with-dependencies.jar -l python3 -c ~/edu/cp/jplag/ex1.py ~/edu/cp/jplag/ex2.py
     xdg-open result/index.html
 }
+sync-nvim(){
+    cd ~/.config/nvim
+    echo -------------------------BEFORE-----------------------------------
+	git status
+	git add .
+    echo --------------------AFTER-----------------------------------------
+    git status
+    echo "Enter commit message: "
+    read "commitmsg"
+	git commit -m "${commitmsg}"
+	git push -u origin master
+}
 sync-dotfiles(){
     cp ~/.zshrc ~/edu/dotfiles/.zshrc
 	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/vscode.snippets
