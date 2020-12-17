@@ -5,7 +5,7 @@ My personal dotfiles(mainly rc's and editor snippets)
 
 <details>
   <summary>Neovim</summary>
-  <a href='https://github.com/sainad2222/dotfiles/blob/master/.nvimrc'>nvimrc</a>
+  Moved to <a href='https://github.com/sainad2222/neovim_config'>nvimrc</a>
 </details>
 
 <details>
