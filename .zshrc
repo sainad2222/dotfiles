@@ -55,8 +55,6 @@ testplag(){
 }
 sync-dotfiles(){
     cp ~/.zshrc ~/edu/dotfiles/.zshrc
-	cp ~/.config/nvim/init.vim ~/edu/dotfiles/.nvimrc
-	cp ~/.config/nvim/UltiSnips/all.snippets ~/edu/dotfiles/nvim.snippets
 	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/vscode.snippets
     cp ~/.config/geany/snippets.conf ~/edu/dotfiles/geany.snippets
 	cd ~/edu/dotfiles
