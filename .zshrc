@@ -13,6 +13,7 @@ alias source-zsh='source ~/.zshrc'
 alias vimrc='nvim ~/.vimrc'
 alias bashrc='nvim ~/.bashrc'
 alias zshrc='nvim ~/.zshrc'
+alias nvimrc='nvim -p plugins.vim generals.vim plug_configs.vim mappings.vim'
 alias source-zsh='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
 # alias rm='rm -i'
@@ -106,6 +107,8 @@ stresstest(){
         cat out2.txt
 }
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/tools/nvim:/usr/local/bin:$PATH
+export PATH=$HOME/tools/telegram:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sainath/.oh-my-zsh"
