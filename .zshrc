@@ -70,6 +70,7 @@ sync-dotfiles(){
     cp ~/.zshrc ~/edu/dotfiles/.zshrc
 	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/vscode.snippets
     cp ~/.config/geany/snippets.conf ~/edu/dotfiles/geany.snippets
+    cp ~/.tmux.conf ~/edu/dotfiles/.tmux.conf
 	cd ~/edu/dotfiles
     echo -------------------------BEFORE-----------------------------------
 	git status
