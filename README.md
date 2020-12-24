@@ -14,6 +14,11 @@ My personal dotfiles(mainly rc's and editor snippets)
 </details>
 
 <details>
+  <summary>.tmux.conf</summary>
+  <a href='https://github.com/sainad2222/dotfiles/blob/master/.tmux.conf'>tmuxrc</a>
+</details>
+
+<details>
   <summary>bashrc and vimrc</summary>
   <i>Depreciated</i>
 </details>
