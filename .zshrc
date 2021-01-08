@@ -116,6 +116,7 @@ stresstest(){
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/tools/nvim:/usr/local/bin:$PATH
 export PATH=$HOME/tools/telegram:/usr/local/bin:$PATH
+export PATH=/usr/local/go/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sainath/.oh-my-zsh"
