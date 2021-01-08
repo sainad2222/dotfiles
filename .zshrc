@@ -88,9 +88,6 @@ sync-dotfiles(){
 	git commit -m "${commitmsg}"
 	git push -u origin master
 }
-snippet-gen(){
-    python ~/edu/dotfiles/snippet_generator.py < test.txt
-}
 mkdircd(){
         mkdir $1
         cd $1
