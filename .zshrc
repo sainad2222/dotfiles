@@ -36,6 +36,12 @@ alias type-cpp='mlt sample cpp'
 alias fd=fdfind
 
 # Custom scripts(Mostly for CP)
+
+cfparse(){
+    cf parse "$1"
+    cd cf/contest/$1
+}
+
 cpp-run() {
     echo "Compiling file..."
     g++ -std=c++17 -o "$1" "$1.cpp"
