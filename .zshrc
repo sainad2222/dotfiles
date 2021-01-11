@@ -26,7 +26,7 @@ alias codetest='code ~/edu/cp/test.py ~/edu/cp/test;exit'
 alias codetest2='code ~/edu/cp/test2.py;exit'
 alias geanytest='geany ~/edu/cp/test.py ~/edu/cp/test &'
 alias geanytest2='geany ~/edu/cp/test2.py &'
-alias nvimtest='nvim -p ~/edu/cp/test.py ~/edu/cp/test'
+alias nvimtest='cd ~ && nvim -p test.py in1.txt'
 alias nvimtest2='nvim -p ~/edu/cp/test2.py ~/edu/cp/test2'
 alias nvimtest3='nvim -p ~/edu/cp/test.cpp ~/edu/cp/test3'
 
@@ -39,7 +39,8 @@ alias fd=fdfind
 
 cfparse(){
     cf parse "$1"
-    cd cf/contest/$1
+    contest=$(echo "$1" | cut -c1-4)
+    cd cf/contest/$contest
 }
 
 cpp-run() {
