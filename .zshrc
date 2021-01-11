@@ -1,12 +1,8 @@
 # CUSTOM ALIASES
 # utility shortcuts
-alias install='sudo dpkg -i'
 alias python='python3'
 alias pip='pip3'
 alias clearls='clear&&ls'
-alias vimrc='vim ~/.vimrc'
-alias bashrc='vim ~/.bashrc'
-alias zshrc='vim ~/.zshrc'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias source-bash='source ~/.bashrc'
 alias source-zsh='source ~/.zshrc'
@@ -16,10 +12,8 @@ alias zshrc='nvim ~/.zshrc'
 alias nvimrc='cd ~/.config/nvim && nvim -p plugins.vim generals.vim plug_configs.vim mappings.vim'
 alias source-zsh='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
 alias open='xdg-open'
+alias install='sudo dpkg -i'
 
 # CP shortcuts
 alias codetest='code ~/edu/cp/test.py ~/edu/cp/test;exit'
@@ -35,7 +29,7 @@ alias type-python='mlt sample python'
 alias type-cpp='mlt sample cpp'
 alias fd=fdfind
 
-# Custom scripts(Mostly for CP)
+# Custom functions(Mostly for CP)
 
 cfparse(){
     cf parse "$1"
