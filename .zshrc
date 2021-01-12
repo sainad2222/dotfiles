@@ -32,9 +32,9 @@ alias fd=fdfind
 # Custom functions(Mostly for CP)
 
 cfparse(){
-    cf parse "$1"
-    contest=$(echo "$1" | cut -c1-4)
-    cd cf/contest/$contest
+    cf parse $1
+    contest=$(echo $1 | tr -dc '0-9')
+    cd ~/cf/contest/$contest
 }
 
 cpp-run() {
