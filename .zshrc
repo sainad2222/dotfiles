@@ -1,3 +1,4 @@
+# CUSTOM ALIASES
 # utility shortcuts
 alias python='python3'
 alias pip='pip3'
