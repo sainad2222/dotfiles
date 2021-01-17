@@ -9,7 +9,7 @@ alias source-zsh='source ~/.zshrc'
 alias vimrc='nvim ~/.vimrc'
 alias bashrc='nvim ~/.bashrc'
 alias zshrc='nvim ~/.zshrc'
-alias nvimrc='cd ~/.config/nvim && nvim -p plugins.vim generals.vim plug_configs.vim mappings.vim'
+alias nvimrc='cd ~/.config/nvim && nvim -p plugins.vim generals.vim plug_configs.vim mappings.vim coc_configs.vim coc-settings.json'
 alias source-zsh='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
 alias open='xdg-open'
@@ -194,6 +194,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules,.git}"'
-# export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git --exclude node_modules'
+# export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude node_modules'
+# export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules,.git}"'
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
