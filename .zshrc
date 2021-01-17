@@ -113,7 +113,7 @@ export PATH=/usr/local/go/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sainath/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -173,7 +173,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git extract vi-mode)
+plugins=(zsh-autosuggestions git extract)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
