@@ -32,6 +32,7 @@ alias fd=fdfind
 # Custom functions(Mostly for CP)
 
 cfparse(){
+    cd ~
     cf parse $1
     contest=$(echo $1 | tr -dc '0-9')
     cd ~/cf/contest/$contest
@@ -115,6 +116,8 @@ export ZSH="/home/sainath/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
 
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_PROMPT_SEPARATE_LINE=false
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
