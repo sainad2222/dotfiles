@@ -3,6 +3,7 @@
 alias python='python3'
 alias pip='pip3'
 alias clearls='clear&&ls'
+alias lsa='ls -lah'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias source-bash='source ~/.bashrc'
 alias source-zsh='source ~/.zshrc'
