@@ -56,34 +56,6 @@ testplag(){
     java -jar ~/edu/cp/jplag/jplag-2.12.1-SNAPSHOT-jar-with-dependencies.jar -l python3 -c ~/edu/cp/jplag/ex1.py ~/edu/cp/jplag/ex2.py
     xdg-open result/index.html
 }
-sync-nvim(){
-    cd ~/.config/nvim
-    echo -------------------------BEFORE-----------------------------------
-	git status
-	git add .
-    echo --------------------AFTER-----------------------------------------
-    git status
-    echo "Enter commit message: "
-    read "commitmsg"
-	git commit -m "${commitmsg}"
-	git push -u origin master
-}
-sync-dotfiles(){
-    cp ~/.zshrc ~/edu/dotfiles/.zshrc
-	cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/vscode.snippets
-    cp ~/.config/geany/snippets.conf ~/edu/dotfiles/geany.snippets
-    cp ~/.tmux.conf ~/edu/dotfiles/.tmux.conf
-	cd ~/edu/dotfiles
-    echo -------------------------BEFORE-----------------------------------
-	git status
-	git add .
-    echo --------------------AFTER-----------------------------------------
-    git status
-    echo "Enter commit message: "
-    read "commitmsg"
-	git commit -m "${commitmsg}"
-	git push -u origin master
-}
 mkdircd(){
         mkdir $1
         cd $1
@@ -202,3 +174,34 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sainath'
+
+
+# depreciated
+# sync-nvim(){
+    # cd ~/.config/nvim
+    # echo -------------------------BEFORE-----------------------------------
+	# git status
+	# git add .
+    # echo --------------------AFTER-----------------------------------------
+    # git status
+    # echo "Enter commit message: "
+    # read "commitmsg"
+	# git commit -m "${commitmsg}"
+	# git push -u origin master
+# }
+# sync-dotfiles(){
+    # cp ~/.zshrc ~/edu/dotfiles/.zshrc
+	# cp ~/.config/Code/User/snippets/testCasesPy.code-snippets ~/edu/dotfiles/vscode.snippets
+    # cp ~/.config/geany/snippets.conf ~/edu/dotfiles/geany.snippets
+    # cp ~/.tmux.conf ~/edu/dotfiles/.tmux.conf
+	# cd ~/edu/dotfiles
+    # echo -------------------------BEFORE-----------------------------------
+	# git status
+	# git add .
+    # echo --------------------AFTER-----------------------------------------
+    # git status
+    # echo "Enter commit message: "
+    # read "commitmsg"
+	# git commit -m "${commitmsg}"
+	# git push -u origin master
+# }
