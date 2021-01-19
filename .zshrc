@@ -28,6 +28,7 @@ alias nvimtest3='nvim -p ~/edu/cp/test.cpp ~/edu/cp/test3'
 alias type-python='mlt sample python'
 alias type-cpp='mlt sample cpp'
 alias fd=fdfind
+alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sainath'
 
 # Custom functions(Mostly for CP)
 
@@ -173,7 +174,6 @@ source $ZSH/oh-my-zsh.sh
 # export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules,.git}"'
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sainath'
 
 
 # depreciated
@@ -205,3 +205,5 @@ alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sai
 	# git commit -m "${commitmsg}"
 	# git push -u origin master
 # }
+
+neofetch
