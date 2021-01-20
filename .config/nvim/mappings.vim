@@ -27,6 +27,8 @@ vnoremap > >gv
 
 map <S-right> gt
 map <S-left> gT
+nnoremap H gT
+nnoremap L gt
 nnoremap <C-h> :wincmd h<CR>
 nnoremap <C-j> :wincmd j<CR>
 nnoremap <C-k> :wincmd k<CR>

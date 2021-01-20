@@ -68,6 +68,8 @@ i  libcairo2-dev - Development files for the Cairo 2D graphics library
 i  libclang-dev - clang library - Development package
 i  libclang1 - C, C++ and Objective-C compiler (LLVM based)
 i  libdebconfclient0 - Debian Configuration Management System (C-implementation library)
+i  libfontconfig1-dev - generic font configuration library - development
+i  libfreetype6-dev - FreeType 2 font engine, development files (transitional package)
 i  libgirepository1.0-dev - Library for handling GObject introspection data (development files)
 i  libimage-exiftool-perl - library and program to read and write meta information in multimedia files
 i  libjpeg-dev - Independent JPEG Group's JPEG runtime library (dependency package)
@@ -80,6 +82,7 @@ i  libpango1.0-dev - Development files for the Pango
 i  libpangocairo-1.0-0 - Layout and rendering of internationalized text
 i  libreoffice-help-common - office productivity suite -- common files for LibreOffice help
 i  libreoffice-help-en-us - office productivity suite -- English_american help
+i  libxcb-xfixes0-dev - X C Binding, xfixes extension, development files
 i  linux-generic-hwe-20.04 - Complete Generic Linux kernel and headers
 i  lld - LLVM-based linker
 i  lldb - Next generation, high-performance debugger
@@ -120,6 +123,7 @@ i  playonlinux - front-end for Wine
 i  poppler-data - encoding data for the poppler PDF rendering library
 i  poppler-utils - PDF utilities (based on Poppler)
 i  python-clang - transitional package to python3-clang
+i  python3 - interactive high-level object-oriented language (default python3 version)
 i  python3-dev - header files and a static library for Python (default)
 i  python3-pip - Python package installer
 i  python3-pydrive - Google Drive API Python wrapper library

@@ -84,6 +84,7 @@ stresstest(){
 export PATH=$HOME/tools/nvim:/usr/local/bin:$PATH
 export PATH=$HOME/tools/telegram:/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:/usr/local/bin:$PATH
+export VISUAL=nvim
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sainath/.oh-my-zsh"
@@ -208,3 +209,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # }
 
 neofetch
+fpath+=${ZDOTDIR:-~}/.zsh_functions
