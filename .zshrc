@@ -30,7 +30,7 @@ alias type-python='mlt sample python'
 alias type-cpp='mlt sample cpp'
 alias fd=fdfind
 alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sainath'
-
+alias packages="cd ~/packages&&aptitude search '~i!~M'>packages.txt&&snap list>snap_packages.txt"
 # Custom functions(Mostly for CP)
 
 cfparse(){

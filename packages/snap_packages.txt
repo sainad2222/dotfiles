@@ -1,0 +1,12 @@
+Name                     Version                     Rev    Tracking         Publisher     Notes
+canonical-livepatch      9.5.5                       95     latest/stable    canonical*    -
+code                     ea3859d4                    52     latest/stable    vscode*       classic
+core                     16-2.48.2                   10583  latest/stable    canonical*    core
+core18                   20201210                    1944   latest/stable    canonical*    base
+gimp                     2.10.22                     322    latest/stable    snapcrafters  -
+gnome-3-28-1804          3.28.0-19-g98f9e67.98f9e67  145    latest/stable    canonical*    -
+gnome-3-34-1804          0+git.3556cb3               66     latest/stable/…  canonical*    -
+gtk-common-themes        0.1-50-gf7627e4             1514   latest/stable/…  canonical*    -
+kde-frameworks-5-core18  5.61.0                      32     latest/stable    kde*          -
+snap-store               3.38.0-59-g494f078          518    latest/stable/…  canonical*    -
+snapd                    2.48.2                      10707  latest/stable    canonical*    snapd
