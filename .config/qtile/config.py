@@ -56,9 +56,6 @@ def window_to_next_group(qtile):
 
 keys = [
 
-# FUNCTION KEYS
-
-    #Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
 
 # SUPER + FUNCTION KEYS
 
@@ -70,7 +67,7 @@ keys = [
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "r", lazy.spawn('albert toggle')),
 
-    Key([mod, 'shift'], 'l', lazy.spawn('gnome-screensaver-command -l')),
+    Key([mod, 'shift'], 'x', lazy.spawn('gnome-screensaver-command -l')),
     Key([mod, "shift"], "q", lazy.shutdown()),
     Key([mod, 'shift', 'control'], 'q', lazy.spawn('gnome-session-quit --power-off')),
 
