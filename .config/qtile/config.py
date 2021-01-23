@@ -29,7 +29,7 @@ import os
 import re
 import socket
 import subprocess
-from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule
+from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule, Match
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
@@ -62,89 +62,25 @@ keys = [
 
 # SUPER + FUNCTION KEYS
 
-    #Key([mod], "e", lazy.spawn('atom')),
-    #Key([mod], "c", lazy.spawn('conky-toggle')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-    #Key([mod], "m", lazy.spawn('pragha')),
     Key([mod], "q", lazy.window.kill()),
-    #Key([mod], "r", lazy.spawn('rofi-theme-selector')),
-    #Key([mod], "t", lazy.spawn('urxvt')),
-    #Key([mod], "v", lazy.spawn('pavucontrol')),
-    #Key([mod], "w", lazy.spawn('vivaldi-stable')),
-    #  Key([mod], "x", lazy.spaw('oblogout')),
-    #  Key([mod], "Escape", lazy.spawn('xkill')),
+
     Key([mod], "Return", lazy.spawn('alacritty')),
-    Key([mod], "KP_Enter", lazy.spawn('alacritty')),
-    #Key([mod], "F1", lazy.spawn('vivaldi-stable')),
-    #Key([mod], "F2", lazy.spawn('atom')),
-    #Key([mod], "F3", lazy.spawn('inkscape')),
-    #Key([mod], "F4", lazy.spawn('gimp')),
-    #Key([mod], "F5", lazy.spawn('meld')),
-    #Key([mod], "F6", lazy.spawn('vlc --video-on-top')),
-    #Key([mod], "F7", lazy.spawn('virtualbox')),
-    #Key([mod], "F8", lazy.spawn('thunar')),
-    #Key([mod], "F9", lazy.spawn('evolution')),
-    #Key([mod], "F10", lazy.spawn("spotify")),
-    Key([mod], "F11", lazy.spawn('rofi -show run -fullscreen')),
-    Key([mod], "F12", lazy.spawn('rofi -show run')),
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
+        desc="Toggle between split and unsplit sides of stack"),
+    Key([mod], "r", lazy.spawn('albert toggle')),
 
-# SUPER + SHIFT KEYS
+    Key([mod, 'shift'], 'l', lazy.spawn('gnome-screensaver-command -l')),
+    Key([mod, "shift"], "q", lazy.shutdown()),
+    Key([mod, 'shift', 'control'], 'q', lazy.spawn('gnome-session-quit --power-off')),
 
-    Key([mod, "shift"], "Return", lazy.spawn('thunar')),
     Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=18'")),
-    Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
-    Key([mod, "control"], "r", lazy.restart()),
-    Key([mod, "shift"], "x", lazy.shutdown()),
 
 # CONTROL + ALT KEYS
 
-    Key(["mod1", "control"], "Next", lazy.spawn('conky-rotate -n')),
-    Key(["mod1", "control"], "Prior", lazy.spawn('conky-rotate -p')),
-    Key(["mod1", "control"], "a", lazy.spawn('xfce4-appfinder')),
-    Key(["mod1", "control"], "b", lazy.spawn('thunar')),
-    Key(["mod1", "control"], "c", lazy.spawn('catfish')),
-    Key(["mod1", "control"], "e", lazy.spawn('evolution')),
-    Key(["mod1", "control"], "f", lazy.spawn('firefox')),
-    Key(["mod1", "control"], "g", lazy.spawn('chromium -no-default-browser-check')),
-    Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
-    Key(["mod1", "control"], "k", lazy.spawn('slimlock')),
-    Key(["mod1", "control"], "m", lazy.spawn('xfce4-settings-manager')),
     Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/compton-toggle.sh')),
-    Key(["mod1", "control"], "p", lazy.spawn('pamac-manager')),
     Key(["mod1", "control"], "r", lazy.spawn('rofi-theme-selector')),
-    Key(["mod1", "control"], "s", lazy.spawn('spotify')),
-    Key(["mod1", "control"], "t", lazy.spawn('alacritty')),
-    Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
-    Key(["mod1", "control"], "v", lazy.spawn('vivaldi-stable')),
-    Key(["mod1", "control"], "w", lazy.spawn('atom')),
-    Key(["mod1", "control"], "Return", lazy.spawn('alacritty')),
-
-# ALT + ... KEYS
-
-    Key(["mod1"], "k", lazy.spawn('slimlock')),
-    Key(["mod1"], "f", lazy.spawn('variety -f')),
-    Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
-    Key(["mod1"], "n", lazy.spawn('variety -n')),
-    Key(["mod1"], "p", lazy.spawn('variety -p')),
-    Key(["mod1"], "t", lazy.spawn('variety -t')),
-    Key(["mod1"], "Up", lazy.spawn('variety --pause')),
-    Key(["mod1"], "Down", lazy.spawn('variety --resume')),
-    Key(["mod1"], "Left", lazy.spawn('variety -p')),
-    Key(["mod1"], "Right", lazy.spawn('variety -n')),
-    Key(["mod1"], "F2", lazy.spawn('gmrun')),
-    Key(["mod1"], "F3", lazy.spawn('xfce4-appfinder')),
-
-# VARIETY KEYS WITH PYWAL
-
-    Key(["mod1", "shift"], "f", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -f')),
-    Key(["mod1", "shift"], "p", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -p')),
-    Key(["mod1", "shift"], "n", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -n')),
-    Key(["mod1", "shift"], "u", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -u')),
-
-# CONTROL + SHIFT KEYS
-
-    Key([mod2, "shift"], "Escape", lazy.spawn('xfce4-taskmanager')),
 
 # SCREENSHOTS
 
@@ -152,30 +88,6 @@ keys = [
     #  Key([mod2], "Print", lazy.spawn('xfce4-screenshooter')),
     #  Key([mod2, "shift"], "Print", lazy.spawn('gnome-screenshot -i')),
 
-# MULTIMEDIA KEYS
-
-# INCREASE/DECREASE BRIGHTNESS
-    #Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
-    #Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
-
-# INCREASE/DECREASE/MUTE VOLUME
-    #Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    #Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
-    #Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
-
-    #Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
-    #Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
-    #Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
-    #Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-
-#    Key([], "XF86AudioPlay", lazy.spawn("mpc toggle")),
-#    Key([], "XF86AudioNext", lazy.spawn("mpc next")),
-#    Key([], "XF86AudioPrev", lazy.spawn("mpc prev")),
-#    Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
-
-# QTILE LAYOUT KEYS
-    #Key([mod], "n", lazy.layout.normalize()),
-    #Key([mod], "space", lazy.next_layout()),
 
 # CHANGE FOCUS
     Key([mod], "Up", lazy.layout.up()),
@@ -186,7 +98,18 @@ keys = [
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
+    Key([mod], "space", lazy.layout.next(),
+            desc="Move window focus to other window"),
 
+ # Move windows between left/right columns or move up/down in current stack.
+    # Moving out of range in Columns layout will create new column.
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
+        desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
+        desc="Move window to the right"),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down(),
+        desc="Move window down"),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
 # RESIZE UP, DOWN, LEFT, RIGHT
     Key([mod, "control"], "l",
@@ -235,45 +158,22 @@ keys = [
         ),
 
 
-# FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    #Key([mod, "shift"], "f", lazy.layout.flip()),
-
-# FLIP LAYOUT FOR BSP
-    #Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    #Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    #Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-    #Key([mod, "mod1"], "h", lazy.layout.flip_left()),
-
-# MOVE WINDOWS UP OR DOWN BSP LAYOUT
-    #Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    #Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    #Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
-    #Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
-
-# MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
-    #Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
-    #Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
-    #Key([mod, "shift"], "Left", lazy.layout.swap_left()),
-    #Key([mod, "shift"], "Right", lazy.layout.swap_right()),
-
-# TOGGLE FLOATING LAYOUT
-    #Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
     ]
 
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+group_names = ["0","1", "2", "3", "4", "5", "6","7"]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
-group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-#  group_labels = ["", "", "", "", "", "", "", "", "", "",]
+#  group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+group_labels = ["HOME","S","A","I","N","A","T","H"]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
+group_layouts = ["monadtall","monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -438,16 +338,7 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-               widget.CPUGraph(
-                        border_color = colors[2],
-                        fill_color = colors[8],
-                        graph_color = colors[8],
-                        background=colors[1],
-                        border_width = 1,
-                        line_width = 1,
-                        core = "all",
-                        type = "box"
-                        ),
+               widget.CPU(),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
@@ -464,7 +355,7 @@ def init_widgets_list():
                         ),
                widget.Memory(
                         font="Noto Sans",
-                        format = '{MemUsed}M/{MemTotal}M',
+                        format = '{MemUsed}M {MemPercent}%',
                         update_interval = 1,
                         fontsize = 12,
                         foreground = colors[5],
@@ -481,7 +372,7 @@ def init_widgets_list():
                        scale=0.7,
                        y_poss=2,
                        theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
-                       update_interval = 5,
+                       update_interval = 1,
                        background = colors[1]
                        ),
                widget.Battery(
@@ -490,7 +381,8 @@ def init_widgets_list():
                        fontsize = 12,
                        foreground = colors[5],
                        background = colors[1],
-                       format='{char} {percent:2.0%}'
+                       discharge_char='',
+                       format='{char} {percent:2.0%}',
                            ),
                widget.Sep(
                         linewidth = 1,
@@ -602,35 +494,34 @@ def set_floating(window):
 
 floating_types = ["notification", "toolbar", "splash", "dialog"]
 
+@hook.subscribe.startup
+def dbus_register():
+    id = os.environ.get('DESKTOP_AUTOSTART_ID')
+    if not id:
+        return
+    subprocess.Popen(['dbus-send',
+                      '--session',
+                      '--print-reply',
+                      '--dest=org.gnome.SessionManager',
+                      '/org/gnome/SessionManager',
+                      'org.gnome.SessionManager.RegisterClient',
+                      'string:qtile',
+                      'string:' + id])
 
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-#  floating_layout = layout.Floating(float_rules=[
-    #  {'wmclass': 'Arcolinux-welcome-app.py'},
-    #  {'wmclass': 'Arcolinux-tweak-tool.py'},
-    #  {'wmclass': 'confirm'},
-    #  {'wmclass': 'dialog'},
-    #  {'wmclass': 'download'},
-    #  {'wmclass': 'error'},
-    #  {'wmclass': 'file_progress'},
-    #  {'wmclass': 'notification'},
-    #  {'wmclass': 'splash'},
-    #  {'wmclass': 'toolbar'},
-    #  {'wmclass': 'confirmreset'},
-    #  {'wmclass': 'makebranch'},
-    #  {'wmclass': 'maketag'},
-    #  {'wmclass': 'Arandr'},
-    #  {'wmclass': 'feh'},
-    #  {'wmclass': 'Galculator'},
-    #  {'wmclass': 'arcolinux-logout'},
-    #  {'wmclass': 'xfce4-terminal'},
-    #  {'wname': 'branchdialog'},
-    #  {'wname': 'Open File'},
-    #  {'wname': 'pinentry'},
-    #  {'wmclass': 'ssh-askpass'},
+floating_layout = layout.Floating(float_rules=[
+    # Run the utility of `xprop` to see the wm class and name of an X client.
+    *layout.Floating.default_float_rules,
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
+])
 
-#  ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True
 
 focus_on_window_activation = "focus" # or smart

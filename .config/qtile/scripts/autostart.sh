@@ -15,3 +15,4 @@ run nm-applet &
 picom --config $HOME/.config/qtile/scripts/picom.conf &
 run volumeicon &
 run lotion &
+run albert &
