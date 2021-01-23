@@ -16,6 +16,7 @@ alias source-bash='source ~/.bashrc'
 alias open='xdg-open'
 alias install='sudo dpkg -i'
 alias r='ranger'
+alias qtilelogs='nvim ~/.local/share/qtile/qtile.log'
 
 # CP shortcuts
 alias codetest='code ~/edu/cp/test.py ~/edu/cp/test;exit'
