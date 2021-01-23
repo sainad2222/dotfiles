@@ -475,7 +475,8 @@
 # - `mods` (see key bindings)
 #mouse_bindings:
 #  - { mouse: Middle, action: PasteSelection }
-
+key_bindings:
+  - { key: N,   mods: Control|Shift, action: SpawnNewInstance }
 # Key bindings
 #
 # Key bindings are specified as a list of objects. For example, this is the

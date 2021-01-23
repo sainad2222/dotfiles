@@ -56,3 +56,6 @@ let g:gitgutter_sign_modified_removed = '<'
 
 " indentLine configs
 let g:indentLine_enabled = 1
+
+" suda.vim configs
+let g:suda_smart_edit = 1

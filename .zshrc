@@ -15,6 +15,7 @@ alias source-zsh='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
 alias open='xdg-open'
 alias install='sudo dpkg -i'
+alias r='ranger'
 
 # CP shortcuts
 alias codetest='code ~/edu/cp/test.py ~/edu/cp/test;exit'
