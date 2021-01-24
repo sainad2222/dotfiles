@@ -14,6 +14,7 @@ i  clang-tools - clang-based tools
 i  clangd - Language server that provides IDE-like features to editors
 i  cmake - cross-platform, open-source make system
 i  code - Code editing. Redefined.
+i  conky - highly configurable system monitor (transitional package)
 i  console-setup - console font and keymap setup program
 i  copyq - Advanced clipboard manager with editing and scripting features
 i  curl - command line tool for transferring data with URL syntax
@@ -26,6 +27,7 @@ i  discord - Chat for Communities and Friends
 i  dosbox - x86 emulator with Tandy/Herc/CGA/EGA/VGA/SVGA graphics, sound and DOS
 i  e2fsprogs - ext2/ext3/ext4 file system utilities
 i  fd-find - Simple, fast and user-friendly alternative to find
+i  feh - imlib2 based image viewer
 i  ffmpeg - Tools for transcoding, streaming and playing of multimedia files
 i  ffmpegthumbnailer - fast and lightweight video thumbnailer
 i  findutils - utilities for finding files--find, xargs
@@ -38,6 +40,7 @@ i  geany - fast and lightweight IDE
 i  geany-plugins - set of plugins for Geany
 i  gir1.2-pango-1.0 - Layout and rendering of internationalized text - gir bindings
 i  git - fast, scalable, distributed revision control system
+i  gnome-screensaver - Screensaver and screen lock formerly used in GNOME
 i  gnome-tweaks - tool to adjust advanced configuration settings for GNOME
 i  google-chrome-stable - The web browser from Google
 i  gparted - GNOME partition editor
@@ -67,10 +70,15 @@ i  libc++abi1 - LLVM low level support for a standard C++ library
 i  libcairo2-dev - Development files for the Cairo 2D graphics library
 i  libclang-dev - clang library - Development package
 i  libclang1 - C, C++ and Objective-C compiler (LLVM based)
+i  libconfig-dev - parsing/manipulation of structured config files (development)
+i  libdbus-1-dev - simple interprocess messaging system (development headers)
 i  libdebconfclient0 - Debian Configuration Management System (C-implementation library)
+i  libev-dev - static library, header files, and docs for libev
+i  libevdev-dev - wrapper library for evdev devices - development files
 i  libfontconfig1-dev - generic font configuration library - development
 i  libfreetype6-dev - FreeType 2 font engine, development files (transitional package)
 i  libgirepository1.0-dev - Library for handling GObject introspection data (development files)
+i  libgl1-mesa-dev - transitional dummy package
 i  libimage-exiftool-perl - library and program to read and write meta information in multimedia files
 i  libjpeg-dev - Independent JPEG Group's JPEG runtime library (dependency package)
 i  liblldb-dev - Next generation, high-performance debugger, header files
@@ -80,9 +88,25 @@ i  libomp-dev - LLVM OpenMP runtime - dev package
 i  libomp5 - LLVM OpenMP runtime
 i  libpango1.0-dev - Development files for the Pango
 i  libpangocairo-1.0-0 - Layout and rendering of internationalized text
+i  libpcre2-dev - New Perl Compatible Regular Expression Library - development files
+i  libpcre3-dev - Old Perl 5 Compatible Regular Expression Library - development files
+i  libpixman-1-dev - pixel-manipulation library for X and cairo (development files)
 i  libreoffice-help-common - office productivity suite -- common files for LibreOffice help
 i  libreoffice-help-en-us - office productivity suite -- English_american help
+i  libx11-xcb-dev - Xlib/XCB interface library (development headers)
+i  libxcb-composite0-dev - X C Binding, composite extension, development files
+i  libxcb-damage0-dev - X C Binding, damage extension, development files
+i  libxcb-glx0-dev - X C Binding, glx extension, development files
+i  libxcb-image0-dev - utility libraries for X C Binding -- image, development files
+i  libxcb-present-dev - X C Binding, present extension, development files
+i  libxcb-randr0-dev - X C Binding, randr extension, development files
+i  libxcb-render-util0-dev - utility libraries for X C Binding -- render-util
+i  libxcb-render0-dev - X C Binding, render extension, development files
+i  libxcb-shape0-dev - X C Binding, shape extension, development files
 i  libxcb-xfixes0-dev - X C Binding, xfixes extension, development files
+i  libxcb-xinerama0-dev - X C Binding, xinerama extension, development files
+i  libxcb1-dev - X C Binding, development files
+i  libxext-dev - X11 miscellaneous extensions library (development headers)
 i  linux-generic-hwe-20.04 - Complete Generic Linux kernel and headers
 i  lld - LLVM-based linker
 i  lldb - Next generation, high-performance debugger
@@ -93,6 +117,7 @@ i  locales - GNU C Library: National Language (locale) data [support]
 i  lynx - classic non-graphical (text-mode) web browser
 i  megacmd - MEGA Command Line Interactive and Scriptable Application
 i  megasync - Easy automated syncing between your computers and your MEGA cloud drive
+i  meson - high-productivity build system
 i  mlocate - quickly find files on the filesystem based on their name
 i  mokutil - tools for manipulating machine owner keys
 i  mongodb - object/document-oriented database (metapackage)
@@ -102,6 +127,7 @@ i  ncurses-bin - terminal-related programs and man pages
 i  neofetch - Shows Linux System Information with Distribution Logo
 i  neovim - heavily refactored vim fork
 i  net-tools - NET-3 networking toolkit
+i  ninja-build - small build system closest in spirit to Make
 i  nodejs - evented I/O for V8 javascript - runtime executable
 i  npm - package manager for Node.js
 i  obs-studio - recorder and streamer for live video content
@@ -123,6 +149,7 @@ i  playonlinux - front-end for Wine
 i  poppler-data - encoding data for the poppler PDF rendering library
 i  poppler-utils - PDF utilities (based on Poppler)
 i  python-clang - transitional package to python3-clang
+i  python-psutil - module providing convenience functions for managing processes
 i  python3 - interactive high-level object-oriented language (default python3 version)
 i  python3-dev - header files and a static library for Python (default)
 i  python3-pip - Python package installer
@@ -130,6 +157,7 @@ i  python3-pydrive - Google Drive API Python wrapper library
 i  python3-tk - Tkinter - Writing Tk applications with Python 3.x
 i  python3-venv - pyvenv-3 binary for python3 (default python3 version)
 i  ripgrep - Recursively searches directories for a regex pattern
+i  rofi - window switcher, run dialog and dmenu replacement
 i  scilab - Scientific software package for numerical computations
 i  shim-signed - Secure Boot chain-loading bootloader (Microsoft-signed binary)
 i  silversearcher-ag - very fast grep-like program, alternative to ack-grep
@@ -152,6 +180,7 @@ i  ubuntu-standard - The Ubuntu standard system
 i  ubuntu-wallpapers - Ubuntu Wallpapers
 i  udev - /dev/ and hotplug management daemon
 i  usbutils - Linux USB utilities
+i  uthash-dev - hash table and linked list for C structures
 i  vim - Vi IMproved - enhanced vi editor
 i  vim-gtk - Vi IMproved - enhanced vi editor (dummy package)
 i  virtualbox-6.1 - Oracle VM VirtualBox
@@ -161,5 +190,7 @@ i  wbritish - British English dictionary words for /usr/share/dict
 i  winbind - service to resolve user and group information from Windows NT servers
 i  wine - Windows API implementation - standard suite
 i  wmctrl - control an EWMH/NetWM compatible X Window Manager
+i  xscreensaver-data-extra - Extra screen saver modules for screensaver frontends
+i  xscreensaver-gl-extra - Extra GL(Mesa) screen saver modules for screensaver frontends
 i  zlib1g-dev - compression library - development
 i  zsh - shell with lots of features
