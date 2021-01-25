@@ -38,7 +38,6 @@ let g:netrw_winsize = 25        " take 25% width on :Vex
 " emmet configs
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-autocmd FileType css,html,js,jsx imap <tab> <plug>(emmet-expand-abbr)
 
 " fzf configs
 let g:fzf_action = {'return': 'tab split'}
