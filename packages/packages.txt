@@ -6,7 +6,6 @@ i  bat-musl - A cat(1) clone with wings.
 i  build-essential - Informational list of build-essential packages
 i  caca-utils - text mode graphics utilities
 i  chrome-gnome-shell - GNOME Shell extensions integration for web browsers
-i  chromium-browser - Transitional package - chromium-browser -> chromium snap
 i  clang - C, C++ and Objective-C compiler (LLVM based)
 i  clang-format - Tool to format C/C++/Obj-C code
 i  clang-tidy - clang-based C++ linter tool
@@ -15,6 +14,9 @@ i  clangd - Language server that provides IDE-like features to editors
 i  cmake - cross-platform, open-source make system
 i  code - Code editing. Redefined.
 i  conky - highly configurable system monitor (transitional package)
+i  conky-all - highly configurable system monitor (all features enabled)
+i  conky-manager - Utility for managing Conky configuration files
+i  conky-manager-extra - Extra widgets for Conky Manager.
 i  console-setup - console font and keymap setup program
 i  copyq - Advanced clipboard manager with editing and scripting features
 i  curl - command line tool for transferring data with URL syntax
@@ -33,6 +35,7 @@ i  ffmpegthumbnailer - fast and lightweight video thumbnailer
 i  findutils - utilities for finding files--find, xargs
 i  firefox - Safe and easy web browser from Mozilla
 i  firefox-locale-en - English language pack for Firefox
+i  flatpak - Application deployment framework for desktop apps
 i  fonts-indic - Meta package to install all Indian language fonts
 i  fonts-powerline - prompt and statusline utility (symbols font)
 i  gcc - GNU C compiler
@@ -41,6 +44,7 @@ i  geany-plugins - set of plugins for Geany
 i  gir1.2-pango-1.0 - Layout and rendering of internationalized text - gir bindings
 i  git - fast, scalable, distributed revision control system
 i  gnome-screensaver - Screensaver and screen lock formerly used in GNOME
+i  gnome-software-plugin-flatpak - Flatpak support for GNOME Software
 i  gnome-tweaks - tool to adjust advanced configuration settings for GNOME
 i  google-chrome-stable - The web browser from Google
 i  gparted - GNOME partition editor
