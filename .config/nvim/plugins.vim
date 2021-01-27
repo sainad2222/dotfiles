@@ -20,5 +20,6 @@ Plug 'mhinz/vim-grepper'                                    " replacing all inst
 Plug 'airblade/vim-gitgutter'                               " git status symbols in sidebar
 Plug 'Yggdroot/indentLine'                                  " shows indentation with visual lines
 Plug 'lambdalisue/suda.vim'                                 " sudo write non writable files
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " nvim in browser
 " Plug 'ThePrimeagen/vim-be-good'                             " primeagen's vim training plugin
 call plug#end()
