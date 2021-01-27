@@ -354,3 +354,54 @@ def keep_alive():
     t = Thread(target=run)
     t.start()
 endsnippet
+
+snippet quickSort
+def partition(arr,l,r):
+    """
+    helper function to partition for quick sort
+    """
+    pivot = arr[r]
+    i = l-1             # -1 initially
+    # j is the main iterator to check
+    # we are gonna iterate upto r-1 that is just before pivot
+    for j in range(l,r):
+        if arr[j]<pivot:
+            # second group
+            arr[i+1],arr[j] = arr[j],arr[i+1]
+            # i+1 because i+1 is where second group starts
+            # so i+1 th elem will always be greater than pivot
+            # so we are swapping that with jth elem
+            # which actulally increases first group size
+            i+=1
+    arr[i+1],arr[r] = arr[r],arr[i+1]
+    i+=1
+    return i
+
+
+def quickSort(arr,l=None,r=None):
+    """
+    quick sort main recursive function
+    """
+    if not l:
+        l = 0
+    if not r:
+        r = len(arr)-1
+    if l>=r:
+        return
+    pivot_idx = partition(arr,l,r)
+    quickSort(arr,l,pivot_idx-1)
+    quickSort(arr,pivot_idx+1,r)
+
+arr = [4,6,3,6,3,7,8]
+quickSort(arr)
+print(arr)
+
+# Time complexity
+# worst O(n^2)      eg: [1,2,3,4,5,6,7] 
+# (if already sorted pivot just stays at last element making it effectively insertion I guess)
+# best  O(nlogn)    eg: [-2,3,-1,5,4,-3,0]
+# (best case if pivot is median) (no duplicates and random)
+# refer 3 way quicksort for dealing with duplicates
+# (idea is it makes three groups i.e., <pivot =pivot >pivot
+
+endsnippet
