@@ -33,6 +33,7 @@ alias type-cpp='mlt sample cpp'
 alias fd=fdfind
 alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sainath'
 alias packages="cd ~/packages&&aptitude search '~i!~M'>packages.txt&&flatpak list --app>flatpak_packages.txt"
+alias cat='bat'
 
 # Custom functions(Mostly for CP)
 
