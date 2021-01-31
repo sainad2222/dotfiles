@@ -19,6 +19,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <leader>l :let @/=""<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :Files ~<CR>
+nnoremap <leader>p :Pretty<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv

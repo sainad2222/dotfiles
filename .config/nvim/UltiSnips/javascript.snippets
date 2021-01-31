@@ -1,0 +1,7 @@
+snippet error
+if (err || $0) {
+	return res.status(400).json({
+		message: "$1",
+	});
+}
+endsnippet
