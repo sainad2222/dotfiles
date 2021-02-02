@@ -6,61 +6,70 @@ sudo apt update&&sudo apt upgrade -y
 # Installing basic stuff
 
 # flatpak
-echo "INSTALLING FLATPAK"
+echo "_______________________FLATPAK______________________________"
 sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # copyq
-echo "INSTALLING COPYQ"
+echo "_______________________COPYQ________________________________"
 sudo add-apt-repository ppa:hluk/copyq
 sudo apt-get update
 sudo apt-get install copyq -y
 
 # cpp
-echo "INSTALLING CPP TOOLS"
+echo "______________________CPP-TOOLS________________________________"
 sudo apt install gcc -y
 sudo apt install clangd -y
 sudo apt install clang-tools -y
 sudo apt install clang-format -y
+sudo apt install cmake -y
 
-echo "INSTALLING JAVA"
+
+echo "_______________________JAVA___________________________________"
 sudo apt install default-jdk -y
-echo "INSTALLING GIT"
+echo "_______________________GIT_______________________________________"
 sudo apt install git -y
-echo "INSTALLING CURL"
+echo "_______________________CURL______________________________________"
 sudo apt install curl -y
-echo "INSTALLING UBUNTU RESTRICTED EXTRAS"
+echo "_____________________UBUNTU RESTRICTED EXTRAS_____________________________"
 sudo apt-get install ubuntu-restricted-extras -y
-echo "INSTALLING ALACRITTY"
+echo "_____________________ALACRITTY___________________________________"
 sudo apt install alacritty -y
-echo "INSTALLING VIM & NEOVIM"
+echo "________________________VIM & NEOVIM_____________________________"
 sudo apt install vim -y
 sudo apt install neovim -y
-echo "INSTALLING rg,fd,fzf"
+echo "_______________________rg,fd,fzf_______________________________"
 sudo apt-get install ripgrep -y
 sudo apt install fd-find -y
 sudo apt-get install fzf -y
-echo "INSTALLING NET-TOOLS"
+echo "_______________________NET-TOOLS_______________________________"
 sudo apt install net-tools
-echo "INSTALLING NEOFETCH"
+echo "______________________NEOFETCH________________________________"
 sudo apt install neofetch -y
-echo "INSTALLING POWERLINE-FONTS"
+echo "______________________POWERLINE-FONTS_____________________________"
 sudo apt-get install fonts-powerline -y
-echo "INSTALLING mlocate alt for locate"
+echo "_____________________MLOCATE_______________________________"
 sudo apt install mlocate -y
-echo "INSTALLING GNOME-TWEAKS"
+echo "_______________________GNOME-TWEAKS______________________________"
 sudo apt install gnome-tweaks -y
-echo "INSTALLING GNOME-SHELL"
+echo "_______________________GNOME-SHELL______________________________"
 sudo apt install chrome-gnome-shell -y
-echo "INSTALLING CMAKE"
-sudo apt install cmake -y
-echo "INSTALLING RANGER"
-sudo apt install ranger -y
+echo "_______________________RANGER_______________________________"
+pip install ranger-fm
 
+echo "__________________________________________________________________"
 echo "CLONING into dotfiles"
 git clone https://github.com/sainad2222/dotfiles.git
 
-echo "INSTALLING zsh"
+echo "_______________________ZSH__________________________________"
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# FINAL words
+echo "_____________________FINAL-WORDS________________________"
+echo "Things to do"
+echo "GNOME extensions"
+echo "  net speed monitor"
+echo "  system-monitor"
+echo "  material shell"
