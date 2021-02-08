@@ -87,6 +87,25 @@ stresstest(){
         echo "Correct answer: "
         cat out2.txt
 }
+server(){
+    tmux new-session \; \
+        send-keys C-l\; \
+        send-keys 'cd ~/edu/XMeme/nodeBackend && npm start' C-m \; \
+        split-window -h \; \
+        send-keys C-l\; \
+        send-keys 'cd ~/edu/XMeme/nodeBackend && nvim .' C-m \; \
+}
+client(){
+    tmux new-session \; \
+        send-keys C-l\; \
+        send-keys 'cd ~/edu/XMeme/frontend && npm start' C-m \; \
+        split-window -h \; \
+        send-keys C-l\; \
+        send-keys 'cd ~/edu/XMeme/frontend && nvim .' C-m \; \
+}
+
+ # func(just to search)
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/tools/nvim:/usr/local/bin:$PATH
 export PATH=$HOME/tools/telegram:/usr/local/bin:$PATH
