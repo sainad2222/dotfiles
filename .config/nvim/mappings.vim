@@ -40,6 +40,8 @@ inoremap <F5> <esc>
 inoremap <F6> <esc>
 inoremap <F12> <esc>
 
+tnoremap ii <C-\><C-n>
+
 " Custom running py and cpp files for CP
 autocmd filetype python,cpp nnoremap <F5> :Autoformat<CR> :w <CR>:sp<CR>:term cf test %<CR>
 autocmd filetype python,cpp nnoremap <F12> :term cf submit -f %

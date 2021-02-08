@@ -34,6 +34,9 @@ alias fd=fdfind
 alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sainath'
 alias packages="cd ~/packages&&aptitude search '~i!~M'>packages.txt&&flatpak list --app>flatpak_packages.txt"
 alias cat='bat'
+alias rm='rm -i'
+alias mv='mv -i'
+alias tmux='tmux -u'
 
 # Custom functions(Mostly for CP)
 

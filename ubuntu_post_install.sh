@@ -57,10 +57,30 @@ echo "_______________________GNOME-SHELL______________________________"
 sudo apt install chrome-gnome-shell -y
 echo "_______________________RANGER_______________________________"
 pip install ranger-fm
+echo "________________________BAT__________________________"
+sudo apt install bat -y
+mkdir -p ~/.local/bin
+sudo ln -s /usr/bin/batcat ~/.local/bin/bat
+
+echo "__________________________DOCKER_______________________"
+curl -fsSL https://get.docker.com -o get-docker.sh
+chmod +x get-docker.sh
+./get-docker.sh
+rm -f get-docker.sh
+
+echo "__________________________PYTHON-PACKAGES________________________"
+echo "___________________________NEOVIM-DEPs__________________________"
+pip3 install pynvim
+pip3 install jedi
+echo "_________________________DNSPYTHON_______________________________"
+pip3 install dnspython
+echo "_____________________________BEAUTIFUL-SOUP_______________________"
+pip3 install bs4
 
 echo "__________________________________________________________________"
 echo "CLONING into dotfiles"
 git clone https://github.com/sainad2222/dotfiles.git
+
 
 echo "_______________________ZSH__________________________________"
 # oh-my-zsh
@@ -73,3 +93,4 @@ echo "GNOME extensions"
 echo "  net speed monitor"
 echo "  system-monitor"
 echo "  material shell"
+echo "setup SSH"
