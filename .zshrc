@@ -90,18 +90,18 @@ stresstest(){
 server(){
     tmux new-session \; \
         send-keys C-l\; \
-        send-keys 'cd ~/edu/XMeme/nodeBackend && npm start' C-m \; \
+        send-keys 'cd ~/edu/XMeme2/backend && npm start' C-m \; \
         split-window -h \; \
         send-keys C-l\; \
-        send-keys 'cd ~/edu/XMeme/nodeBackend && nvim .' C-m \; \
+        send-keys 'cd ~/edu/XMeme2/backend && nvim .' C-m \; \
 }
 client(){
     tmux new-session \; \
         send-keys C-l\; \
-        send-keys 'cd ~/edu/XMeme/frontend && npm start' C-m \; \
+        send-keys 'cd ~/edu/XMeme2/frontend && npm start' C-m \; \
         split-window -h \; \
         send-keys C-l\; \
-        send-keys 'cd ~/edu/XMeme/frontend && nvim .' C-m \; \
+        send-keys 'cd ~/edu/XMeme2/frontend && nvim .' C-m \; \
 }
 
  # func(just to search)
@@ -234,5 +234,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 	# git push -u origin master
 # }
 
-neofetch
 fpath+=${ZDOTDIR:-~}/.zsh_functions

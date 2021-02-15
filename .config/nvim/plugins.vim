@@ -22,4 +22,5 @@ Plug 'Yggdroot/indentLine'                                  " shows indentation 
 Plug 'lambdalisue/suda.vim'                                 " sudo write non writable files
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " nvim in browser
 Plug 'mlaursen/vim-react-snippets'                          " react snippet support
+Plug 'kassio/neoterm'                                       " integrated terminal
 call plug#end()
