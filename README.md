@@ -1,8 +1,6 @@
 # dotfiles
 My dotfiles
 
-(v1)(DEPRECIATED)
-
 [bashrc](https://github.com/sainad2222/dotfiles/blob/master/.bashrc)(DEPRECIATED)
 
 [zshrc](https://github.com/sainad2222/dotfiles/blob/master/.zshrc)
@@ -18,3 +16,5 @@ My dotfiles
 [ranger config](https://github.com/sainad2222/dotfiles/tree/master/.config/ranger)
 
 [qtile config](https://github.com/sainad2222/dotfiles/tree/master/.config/qtile)
+
+[old-configs](https://github.com/sainad2222/dotfiles/tree/old/v1)(DEPRECIATED)
