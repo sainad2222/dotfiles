@@ -27,3 +27,5 @@ augroup MyCocExplorer
   autocmd VimEnter * sil! au! FileExplorer *
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | silent! bd | exe 'CocCommand explorer --position floating --open-action-strategy select ' . d | endif
 augroup END
+
+let g:coc_global_extensions = ['coc-explorer','coc-tsserver','coc-jedi']
