@@ -23,4 +23,5 @@ Plug 'lambdalisue/suda.vim'                                 " sudo write non wri
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " nvim in browser
 Plug 'mlaursen/vim-react-snippets'                          " react snippet support
 Plug 'kassio/neoterm'                                       " integrated terminal
+Plug 'mxw/vim-jsx'                                          " jsx support for vim
 call plug#end()
