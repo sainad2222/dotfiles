@@ -12,7 +12,7 @@ let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
 let g:NERDCreateDefaultMappings = 1
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
-
+let g:NERDCustomDelimiters = { 'javascript.jsx': {'left': '{/*', 'right': '*/}' } }
 " sneak motion configs
 let g:sneak#label = 1
 map f <Plug>Sneak_s
