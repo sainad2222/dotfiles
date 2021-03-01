@@ -65,13 +65,13 @@ keys = [
     Key([mod], "Return", lazy.spawn('alacritty')),
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "r", lazy.spawn('albert toggle')),
+    #  Key([mod], "r", lazy.spawn('albert toggle')),
 
-    Key([mod, 'shift'], 'x', lazy.spawn('gnome-screensaver-command -l')),
+    Key([mod, 'shift'], 'x', lazy.spawn('gnome-screensaver-command -l',shell=True)),
     Key([mod, "shift"], "q", lazy.shutdown()),
     Key([mod, 'shift', 'control'], 'q', lazy.spawn('gnome-session-quit --power-off')),
 
-    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=18'")),
+    Key([mod], "p", lazy.spawn("rofi -modi drun -show drun")),
     Key([mod, "shift"], "r", lazy.restart()),
 
 # CONTROL + ALT KEYS
