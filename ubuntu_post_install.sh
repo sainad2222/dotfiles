@@ -68,6 +68,16 @@ chmod +x get-docker.sh
 ./get-docker.sh
 rm -f get-docker.sh
 
+echo "_______________________NODE________________________"
+curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+chmod +x nodesource_setup.sh
+sudo ./nodesource_setup.sh
+sudo apt install nodejs -y
+sudo apt install npm -y
+
+echo "____________________NPM-PACKAGES____________________________"
+npm install -g tldr
+
 echo "__________________________PYTHON-PACKAGES________________________"
 echo "___________________________NEOVIM-DEPs__________________________"
 pip3 install pynvim

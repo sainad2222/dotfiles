@@ -75,6 +75,7 @@ keys = [
     Key([mod], "q", lazy.window.kill()),
 
     Key([mod], "Return", lazy.spawn('alacritty')),
+    Key([mod], "b", lazy.spawn('firefox')),
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
 
@@ -91,9 +92,8 @@ keys = [
 
 # SCREENSHOTS
 
-    #  Key([], "Print", lazy.spawn("scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
-    #  Key([mod2], "Print", lazy.spawn('xfce4-screenshooter')),
-    #  Key([mod2, "shift"], "Print", lazy.spawn('gnome-screenshot -i')),
+    Key([], "Print", lazy.spawn("gnome-screenshot")),
+    Key(["shift"], "Print", lazy.spawn("gnome-screenshot -i")),
 
 
 # CHANGE FOCUS
@@ -171,13 +171,13 @@ keys = [
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["0","1", "2", "3", "4", "5", "6","7"]
+group_names = ["1", "2", "3", "4", "5", "6","7"]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #  group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["HOME","S","A","I","N","A","T","H"]
+group_labels = ["S","A","I","N","A","T","H"]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["monadtall","monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
@@ -242,9 +242,9 @@ def init_colors():
             ["#a9a9a9", "#a9a9a9"]] # color 9
 
 
-#  colors = init_colors()
-import pywal_colors
-colors = pywal_colors.colors
+colors = init_colors()
+#  import pywal_colors
+#  colors = pywal_colors.colors
 
 # WIDGETS FOR THE BAR
 
@@ -271,8 +271,8 @@ def init_widgets_list():
                         inactive = colors[5],
                         rounded = False,
                         highlight_method = "text",
-                        this_current_screen_border = colors[8],
-                        foreground = colors[2],
+                        this_current_screen_border = colors[7],
+                        foreground = colors[5],
                         background = colors[1]
                         ),
                widget.Sep(
@@ -398,10 +398,10 @@ def init_widgets_list():
                         foreground = colors[2],
                         background = colors[1]
                         ),
-              widget.CurrentLayout(
+              widget.CurrentLayoutIcon(
                         font = "Noto Sans Bold",
                         foreground = colors[5],
-                        background = colors[1]
+                        background = colors[6]
                         ),
               ]
     return widgets_list
@@ -513,6 +513,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(wm_class='copyq'),  # copyq
+    Match(wm_class='gnome-screenshot'), # gnome-screenshot
 ])
 
 auto_fullscreen = True
