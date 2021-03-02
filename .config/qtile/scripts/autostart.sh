@@ -8,11 +8,9 @@ function run {
 }
 
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill ~/Pictures/Wallpapers/Firefox_wallpaper.png &
+feh --bg-fill ~/Pictures/Wallpapers/darkmountain.jpg &
 
-(conky -c $HOME/.config/qtile/scripts/system-overview) &
 run nm-applet &
-picom --config $HOME/.config/qtile/scripts/picom.conf &
+picom &
 run volumeicon &
-run lotion &
-run albert &
+run copyq &

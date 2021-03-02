@@ -37,6 +37,7 @@ alias cat='bat'
 alias rm='rm -i'
 alias mv='mv -i'
 alias tmux='tmux -u'
+alias qtiledebug='tail -f /home/$USER/.local/share/qtile/qtile.log'
 
 # Custom functions(Mostly for CP)
 

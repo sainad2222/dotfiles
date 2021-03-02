@@ -1,3 +1,5 @@
+# Dependencies, Alacritty
+# Rofi,xbacklight
 # Copyrigh (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
@@ -35,6 +37,10 @@ from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
 import arcobattery
 
+# pywal colors
+import pywal_colors
+colors = pywal_colors.colors
+
 #mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
@@ -56,7 +62,13 @@ def window_to_next_group(qtile):
 
 keys = [
 
-
+# volume keys
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 -q set Master 2dB+"), desc='Volume Up'),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 -q set Master 2dB-"), desc='Volume Down'),
+    Key([], "XF86AudioMute", lazy.spawn("amixer -c 0 -q set Master toggle"), desc='Toggle Mute'),
+# Change screen brightness
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
 # SUPER + FUNCTION KEYS
 
     Key([mod], "f", lazy.window.toggle_fullscreen()),
@@ -65,7 +77,6 @@ keys = [
     Key([mod], "Return", lazy.spawn('alacritty')),
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
-    #  Key([mod], "r", lazy.spawn('albert toggle')),
 
     Key([mod, 'shift'], 'x', lazy.spawn('gnome-screensaver-command -l',shell=True)),
     Key([mod, "shift"], "q", lazy.shutdown()),
@@ -76,7 +87,6 @@ keys = [
 
 # CONTROL + ALT KEYS
 
-    Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/compton-toggle.sh')),
     Key(["mod1", "control"], "r", lazy.spawn('rofi-theme-selector')),
 
 # SCREENSHOTS
@@ -208,12 +218,12 @@ layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
-    layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
-    layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
+    layout.MonadTall(margin=0, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
+    #  layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
+    #  layout.Matrix(**layout_theme),
+    #  layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
+    #  layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme)
 ]
 
@@ -232,8 +242,9 @@ def init_colors():
             ["#a9a9a9", "#a9a9a9"]] # color 9
 
 
-colors = init_colors()
-
+#  colors = init_colors()
+import pywal_colors
+colors = pywal_colors.colors
 
 # WIDGETS FOR THE BAR
 
@@ -262,17 +273,6 @@ def init_widgets_list():
                         highlight_method = "text",
                         this_current_screen_border = colors[8],
                         foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.CurrentLayout(
-                        font = "Noto Sans Bold",
-                        foreground = colors[5],
                         background = colors[1]
                         ),
                widget.Sep(
@@ -392,6 +392,17 @@ def init_widgets_list():
                         icon_size=20,
                         padding = 4
                         ),
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
+              widget.CurrentLayout(
+                        font = "Noto Sans Bold",
+                        foreground = colors[5],
+                        background = colors[1]
+                        ),
               ]
     return widgets_list
 
@@ -433,38 +444,22 @@ dgroups_app_rules = []
 #########################################################
 ################ assgin apps to groups ##################
 #########################################################
-# @hook.subscribe.client_new
-# def assign_app_group(client):
-#     d = {}
+@hook.subscribe.client_new
+def assign_app_group(client):
+   d = {}
 #     #####################################################################################
 #     ### Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient ###
 #     #####################################################################################
-#     d[group_names[0]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
-#               "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
-#     d[group_names[1]] = [ "Atom", "Subl3", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
-#                "atom", "subl3", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
-#     d[group_names[2]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
-#               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
-#     d[group_names[3]] = ["Gimp", "gimp" ]
-#     d[group_names[4]] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
-#     d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
-#     d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
-#               "virtualbox manager", "virtualbox machine", "vmplayer", ]
-#     d[group_names[7]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
-#               "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
-#     d[group_names[8]] = ["Evolution", "Geary", "Mail", "Thunderbird",
-#               "evolution", "geary", "mail", "thunderbird" ]
-#     d[group_names[9]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
-#               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
+   d[group_names[7]] = ["notion"]
 #     ######################################################################################
 #     
-# wm_class = client.window.get_wm_class()[0]
-#
-#     for i in range(len(d)):
-#         if wm_class in list(d.values())[i]:
-#             group = list(d.keys())[i]
-#             client.togroup(group)
-#             client.group.cmd_toscreen(toggle=False)
+   wm_class = client.window.get_wm_class()[0]
+
+   for i in range(len(d)):
+       if wm_class in list(d.values())[i]:
+           group = list(d.keys())[i]
+           client.togroup(group)
+           client.group.cmd_toscreen(toggle=False)
 
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
@@ -517,6 +512,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
+    Match(wm_class='copyq'),  # copyq
 ])
 
 auto_fullscreen = True
