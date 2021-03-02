@@ -14,3 +14,4 @@ run nm-applet &
 picom &
 run volumeicon &
 run copyq &
+xscreensaver -nosplash &

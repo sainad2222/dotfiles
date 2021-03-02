@@ -79,9 +79,8 @@ keys = [
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
 
-    Key([mod, 'shift'], 'x', lazy.spawn('gnome-screensaver-command -l',shell=True)),
+    Key([mod, 'shift'], 'l', lazy.spawn('xscreensaver-command -lock')),
     Key([mod, "shift"], "q", lazy.shutdown()),
-    Key([mod, 'shift', 'control'], 'q', lazy.spawn('gnome-session-quit --power-off')),
 
     Key([mod], "p", lazy.spawn("rofi -modi drun -show drun")),
     Key([mod, "shift"], "r", lazy.restart()),
@@ -275,12 +274,6 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1]
                         ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
                widget.Spacer(
                         length = bar.STRETCH,
                    ),
@@ -450,7 +443,7 @@ def assign_app_group(client):
 #     #####################################################################################
 #     ### Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient ###
 #     #####################################################################################
-   d[group_names[7]] = ["notion"]
+   d[group_names[6]] = ["notion"]
 #     ######################################################################################
 #     
    wm_class = client.window.get_wm_class()[0]
@@ -514,6 +507,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='pinentry'),  # GPG key password entry
     Match(wm_class='copyq'),  # copyq
     Match(wm_class='gnome-screenshot'), # gnome-screenshot
+    Match(wm_class='megasync'), # mega
 ])
 
 auto_fullscreen = True
