@@ -1,5 +1,5 @@
-# Dependencies, Alacritty
-# Rofi,xbacklight
+# Dependencies:
+# Rofi,xbacklight,xscreensaver,Alacritty
 # Copyrigh (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
@@ -36,10 +36,6 @@ from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
 import arcobattery
-
-# pywal colors
-import pywal_colors
-colors = pywal_colors.colors
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -79,7 +75,8 @@ keys = [
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
 
-    Key([mod, 'shift'], 'l', lazy.spawn('xscreensaver-command -lock')),
+    #  Key([mod], 'x', lazy.spawn('i3lock -i ~/Pictures/Wallpapers/Firefox_wallpaper.png',shell=True)),
+    Key([mod], 'x', lazy.spawn('xscreensaver-command -l')),
     Key([mod, "shift"], "q", lazy.shutdown()),
 
     Key([mod], "p", lazy.spawn("rofi -modi drun -show drun")),
@@ -220,7 +217,8 @@ layouts = [
     layout.MonadTall(margin=0, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
     #  layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
     #  layout.Matrix(**layout_theme),
-    #  layout.Bsp(**layout_theme),
+    #  layou.Bsp(**layout_theme),
+    #  layout.Zoomy(**layout_theme),
     layout.Floating(**layout_theme),
     #  layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme)
@@ -381,7 +379,7 @@ def init_widgets_list():
                         background = colors[1]
                         ),
                widget.Systray(
-                        background=colors[1],
+                        background=colors[5],
                         icon_size=20,
                         padding = 4
                         ),
@@ -443,6 +441,7 @@ def assign_app_group(client):
 #     #####################################################################################
 #     ### Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient ###
 #     #####################################################################################
+   d[group_names[4]] = ["microsoft teams - preview"]
    d[group_names[6]] = ["notion"]
 #     ######################################################################################
 #     
@@ -508,6 +507,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='copyq'),  # copyq
     Match(wm_class='gnome-screenshot'), # gnome-screenshot
     Match(wm_class='megasync'), # mega
+    Match(wm_class='teams'), # teams
 ])
 
 auto_fullscreen = True
