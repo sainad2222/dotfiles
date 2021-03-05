@@ -227,16 +227,17 @@ layouts = [
 # COLORS FOR THE BAR
 
 def init_colors():
-    return [["#2F343F", "#2F343F"], # color 0
-            ["#2F343F", "#2F343F"], # color 1
-            ["#c0c5ce", "#c0c5ce"], # color 2
-            ["#fba922", "#fba922"], # color 3
-            ["#3384d0", "#3384d0"], # color 4
-            ["#f3f4f5", "#f3f4f5"], # color 5
-            ["#cd1f3f", "#cd1f3f"], # color 6
-            ["#62FF00", "#62FF00"], # color 7
-            ["#6790eb", "#6790eb"], # color 8
-            ["#a9a9a9", "#a9a9a9"]] # color 9
+    # gruvbox colorschemes
+    return [["#282828", "#282828"], # 0 background(black)
+            ["#ebdbb2", "#ebdbb2"], # 1 foreground(white)
+            ["#cc241d", "#cc241d"], # 2 red
+            ["#98971a", "#98971a"], # 3 green
+            ["#458588", "#458588"], # 4 blue
+            ["#d79921", "#d79921"], # 5 yellow1
+            ["#fabd2f", "#fabd2f"], # 6 yellow2
+            ["#d65d0e", "#d65d0e"], # 7 orange1
+            ["#fe8019", "#fe8019"], # 8 orange2
+            ["#a89984", "#a89984"]] # 9 gray
 
 
 colors = init_colors()
@@ -249,7 +250,7 @@ def init_widgets_defaults():
     return dict(font="Noto Sans",
                 fontsize = 12,
                 padding = 2,
-                background=colors[1])
+                background=colors[0])
 
 widget_defaults = init_widgets_defaults()
 
@@ -269,8 +270,8 @@ def init_widgets_list():
                         rounded = False,
                         highlight_method = "text",
                         this_current_screen_border = colors[7],
-                        foreground = colors[5],
-                        background = colors[1]
+                        foreground = colors[6],
+                        background = colors[0]
                         ),
                widget.Spacer(
                         length = bar.STRETCH,
@@ -279,27 +280,27 @@ def init_widgets_list():
                         font="FontAwesome",
                         text="  ",
                         foreground=colors[3],
-                        background=colors[1],
+                        background=colors[0],
                         padding = 0,
                         fontsize=16
                         ),
                widget.Clock(
-                        foreground = colors[5],
-                        background = colors[1],
+                        foreground = colors[1],
+                        background = colors[0],
                         fontsize = 12,
                         format="%d-%m-%Y %H:%M:%S"
                         ),
                widget.Sep(
                        linewidth = 1,
                        padding = 10,
-                       foreground = colors[2],
-                       background = colors[1]
+                       foreground = colors[1],
+                       background = colors[0]
                        ),
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
-                        foreground=colors[6],
-                        background=colors[1],
+                        foreground=colors[3],
+                        background=colors[0],
                         padding = 0,
                         fontsize=16
                         ),
@@ -307,37 +308,41 @@ def init_widgets_list():
                        font="Noto Sans",
                        fontsize=12,
                        interface="wlp3s0",
-                       foreground=colors[2],
-                       background=colors[1],
+                       foreground=colors[1],
+                       background=colors[0],
                        padding = 0,
                        format='{down} ↓↑ {up}'
                        ),
                widget.Sep(
                        linewidth = 1,
                        padding = 10,
-                       foreground = colors[2],
-                       background = colors[1]
+                       foreground = colors[1],
+                       background = colors[0]
                        ),
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
-                        foreground=colors[6],
-                        background=colors[1],
+                        foreground=colors[3],
+                        background=colors[0],
                         padding = 0,
                         fontsize=16
                         ),
-               widget.CPU(),
+               widget.CPU(
+                        foreground=colors[1],
+                        background=colors[0],
+                        padding=0,
+                       ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
+                        foreground = colors[3],
+                        background = colors[0]
                         ),
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
-                        foreground=colors[4],
-                        background=colors[1],
+                        foreground=colors[3],
+                        background=colors[0],
                         padding = 0,
                         fontsize=16
                         ),
@@ -346,14 +351,14 @@ def init_widgets_list():
                         format = '{MemUsed}M {MemPercent}%',
                         update_interval = 1,
                         fontsize = 12,
-                        foreground = colors[5],
-                        background = colors[1],
+                        foreground = colors[1],
+                        background = colors[0],
                        ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
+                        foreground = colors[3],
+                        background = colors[0]
                         ),
                arcobattery.BatteryIcon(
                        padding=0,
@@ -361,38 +366,38 @@ def init_widgets_list():
                        y_poss=2,
                        theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
                        update_interval = 1,
-                       background = colors[1]
+                       background = colors[0]
                        ),
                widget.Battery(
                        font="Noto Sans",
                        update_interval = 1,
                        fontsize = 12,
-                       foreground = colors[5],
-                       background = colors[1],
+                       foreground = colors[1],
+                       background = colors[0],
                        discharge_char='',
                        format='{char} {percent:2.0%}',
                            ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
+                        foreground = colors[3],
+                        background = colors[0]
                         ),
                widget.Systray(
-                        background=colors[5],
+                        background=colors[9],
                         icon_size=20,
                         padding = 4
                         ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
+                        foreground = colors[1],
+                        background = colors[0]
                         ),
               widget.CurrentLayoutIcon(
                         font = "Noto Sans Bold",
-                        foreground = colors[5],
-                        background = colors[6]
+                        foreground = colors[4],
+                        background = colors[0]
                         ),
               ]
     return widgets_list
