@@ -12,7 +12,7 @@ Plug 'mbbill/undotree'                                      " undo tree
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " fzf finally! yay
 Plug 'junegunn/fzf.vim'
 Plug 'gruvbox-community/gruvbox'                            " colorscheme gruvbox
-Plug 'flazz/vim-colorschemes'                               " more colorschemes
+Plug 'dracula/vim'                                          " colorscheme dracula
 Plug 'tpope/vim-fugitive'                                   " illegal git tool
 Plug 'mattn/emmet-vim'                                      " emmet html completion
 Plug 'ryanoasis/vim-devicons'                               " dev icons
