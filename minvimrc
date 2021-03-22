@@ -40,4 +40,5 @@ vnoremap < <gv
 vnoremap > >gv
 nnoremap H gT
 nnoremap L gt
-
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
