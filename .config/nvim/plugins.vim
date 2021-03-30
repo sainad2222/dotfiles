@@ -16,11 +16,8 @@ Plug 'dracula/vim'                                          " colorscheme dracul
 Plug 'tpope/vim-fugitive'                                   " illegal git tool
 Plug 'mattn/emmet-vim'                                      " emmet html completion
 Plug 'ryanoasis/vim-devicons'                               " dev icons
-Plug 'mhinz/vim-grepper'                                    " replacing all instances
 Plug 'airblade/vim-gitgutter'                               " git status symbols in sidebar
 Plug 'Yggdroot/indentLine'                                  " shows indentation with visual lines
-Plug 'lambdalisue/suda.vim'                                 " sudo write non writable files
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " nvim in browser
 Plug 'mlaursen/vim-react-snippets'                          " react snippet support
 Plug 'kassio/neoterm'                                       " integrated terminal
 Plug 'mxw/vim-jsx'                                          " jsx support for vim

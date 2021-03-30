@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-# shortcut: "gnome-terminal --geometry 50x20+400+150 -e /home/sainath/rofi_scripts/clip.sh"
+#!/usr/bin/env sh
 
 declare -A options
 # Personal
