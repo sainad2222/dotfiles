@@ -60,7 +60,7 @@
         window.onload = () => {
             let xhr = new XMLHttpRequest();
             // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=1268561&units=metric&appid=3618658df00725002ba997d13ad479e5');
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=1268561&units=metric&appid=');
             xhr.onload = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
