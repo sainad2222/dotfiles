@@ -16,7 +16,7 @@ choice=$(printf '%s\n' "${!options[@]}" | rofi -dmenu -i -l 20 -p 'Edits:' "$@")
 
 if [ "$choice" ]; then
     path=$(printf '%s\n' "${options["${choice}"]}")
-    gvim "$path"
+    gtk-launch nvim "$path"
 else
     echo "Exited" && exit 0
 fi
