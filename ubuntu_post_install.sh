@@ -61,6 +61,7 @@ echo "________________________BAT__________________________"
 sudo apt install bat -y
 mkdir -p ~/.local/bin
 sudo ln -s /usr/bin/batcat ~/.local/bin/bat
+# add .local/bin to path by creating and .zshenv
 
 echo "__________________________DOCKER_______________________"
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -75,6 +76,8 @@ sudo ./nodesource_setup.sh
 sudo apt install nodejs -y
 sudo apt install npm -y
 
+sudo apt install neofetch htop git curl
+
 echo "____________________NPM-PACKAGES____________________________"
 npm install -g tldr
 
@@ -87,24 +90,31 @@ pip3 install dnspython
 echo "_____________________________BEAUTIFUL-SOUP_______________________"
 pip3 install bs4
 
+# setup SSH keys
 echo "__________________________________________________________________"
 echo "CLONING into dotfiles"
 git clone https://github.com/sainad2222/dotfiles.git
 
-
+sudo add-apt-repository ppa:aslatter/ppa
+sudo apt install alacritty
 echo "_______________________ZSH__________________________________"
+sudo apt install zsh
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+ln -s $HOME/dotfiles/.config/alacritty $HOME/.config/alacritty
+ln -s $HOME/dotfiles/.config/awesome $HOME/.config/awesome
+ln -s $HOME/dotfiles/.config/neofetch $HOME/.config/neofetch
+ln -s $HOME/dotfiles/.config/nvim $HOME/.config/nvim
+ln -s $HOME/dotfiles/.config/qtile $HOME/.config/qtile
+ln -s $HOME/dotfiles/.config/qutebrowser $HOME/.config/qutebrowser
+ln -s $HOME/dotfiles/.config/ranger $HOME/.config/ranger
+ln -s $HOME/dotfiles/.config/vscodevim.vim $HOME/.config/vscodevim.vim
 
-# FINAL words
-echo "_____________________FINAL-WORDS________________________"
-echo "Things to do"
-echo "GNOME extensions"
-echo "  net speed monitor"
-echo "  system-monitor"
-echo "  material shell"
-echo "setup SSH"
+ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
