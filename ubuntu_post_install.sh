@@ -1,36 +1,6 @@
 #!/bin/bash
 
-# updating and stuff
-sudo apt update&&sudo apt upgrade -y
-
-# Installing basic stuff
-
-
-# copyq
-echo "_______________________COPYQ________________________________"
-sudo add-apt-repository ppa:hluk/copyq
-sudo apt-get update
-sudo apt-get install copyq -y
-
-# cpp
-echo "______________________CPP-TOOLS________________________________"
-sudo apt install gcc -y
-sudo apt install clangd -y
-sudo apt install clang-tools -y
-sudo apt install clang-format -y
-sudo apt install cmake -y
-
-
-echo "_______________________JAVA___________________________________"
-sudo apt install default-jdk -y
-echo "_______________________GNOME-SHELL______________________________"
-sudo apt install chrome-gnome-shell -y
-
-echo "__________________________DOCKER_______________________"
-curl -fsSL https://get.docker.com -o get-docker.sh
-chmod +x get-docker.sh
-./get-docker.sh
-rm -f get-docker.sh
+sudo apt update
 
 echo "________________________BAT__________________________"
 sudo apt install bat -y
@@ -39,6 +9,7 @@ sudo ln -s /usr/bin/batcat ~/.local/bin/bat
 # add .local/bin to path by creating and .zshenv
 
 # setup SSH keys
+
 echo "__________________________________________________________________"
 echo "CLONING into dotfiles"
 git clone https://github.com/sainad2222/dotfiles.git
@@ -106,3 +77,28 @@ pip install pynvim jedi dnspython bs4 ranger-fm black
 
 # download nerd font(ubuntu nerd font) from https://www.nerdfonts.com/font-downloads
 # put it in ~/.fonts and run `fc-cache -fv`
+
+echo "_______________________JAVA___________________________________"
+sudo apt install default-jdk -y
+
+echo "_______________________GNOME-SHELL______________________________"
+sudo apt install gnome-shell-extensions chrome-gnome-shell -y
+
+## gnome-extensions
+# https://extensions.gnome.org/extension/104/netspeed/
+# https://extensions.gnome.org/extension/779/clipboard-indicator/
+# https://extensions.gnome.org/extension/120/system-monitor/
+# deps for system monitor
+sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
+# https://extensions.gnome.org/extension/307/dash-to-dock/
+
+# download icon pack from https://www.gnome-look.org/p/1425426/
+# and put it in /usr/share/icons
+
+# echo "___________________OPTIONAL_____________________"
+# echo "__________________________DOCKER_______________________"
+# curl -fsSL https://get.docker.com -o get-docker.sh
+# chmod +x get-docker.sh
+# ./get-docker.sh
+# rm -f get-docker.sh
+
