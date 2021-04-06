@@ -1,4 +1,6 @@
 #!/bin/bash
+# update following links timely
+# ubuntu-nerd-fonts go node
 
 sudo apt update
 
@@ -14,7 +16,7 @@ echo "__________________________________________________________________"
 echo "CLONING into dotfiles"
 git clone https://github.com/sainad2222/dotfiles.git
 
-sudo apt install neofetch htop git curl vim-gui-common vim net-tools mlocate gnome-tweaks python3-pip
+sudo apt install neofetch htop git curl vim-gui-common vim net-tools mlocate gnome-tweaks python3-pip rofi dmenu
 
 sudo add-apt-repository ppa:aslatter/ppa
 sudo apt install alacritty
@@ -75,14 +77,38 @@ sudo npm install -g neovim
 echo "_____________________PIP Packages___________________"
 pip install pynvim jedi dnspython bs4 ranger-fm black
 
-# download nerd font(ubuntu nerd font) from https://www.nerdfonts.com/font-downloads
-# put it in ~/.fonts and run `fc-cache -fv`
+echo "___________________Installing ubuntu nerd fonts____________"
+mkdir -p tmp
+cd tmp
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ubuntu.zip
+unzip Ubuntu.zip
+mv Ubuntu ~/.fonts
+fc-cache -fv
+cd $HOME
+rm -rf tmp
 
 echo "_______________________JAVA___________________________________"
 sudo apt install default-jdk -y
 
 echo "_______________________GNOME-SHELL______________________________"
 sudo apt install gnome-shell-extensions chrome-gnome-shell -y
+
+echo "________________________7zip______________________"
+sudo add-apt-repository universe
+sudo apt install p7zip-full p7zip-rar -y
+
+echo "____________________GO____________________________"
+mkdir -p tmp
+cd tmp
+wget https://golang.org/dl/go1.16.3.linux-amd64.tar.gz
+extract go1.16.3.linux-amd64.tar.gz
+cd go1.16.3.linux-amd64.tar.gz
+sudo mv go /usr/local
+cd $HOME
+rm -rf tmp
+# add go to path
+
+# install cf-tool from https://github.com/xalanq/cf-tool#installation
 
 ## gnome-extensions
 # https://extensions.gnome.org/extension/104/netspeed/
@@ -102,3 +128,19 @@ sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-m
 # ./get-docker.sh
 # rm -f get-docker.sh
 
+### softwares
+# discord(snap)
+# telegram(snap)
+# visual studio code(snap)
+# bitwarden
+# virtualbox
+# notion(curl https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh > setup.sh and ./setup.sh native)
+# qutebrowser(from apt)(!! installs old version and qtwebengine chromimum 69)
+## optional
+# obs
+# brave
+# octave(sudo apt-get install octave-control octave-image octave-io octave-optim octave-signal octave-statistics octave)
+# teams(snap or deb package from website)
+
+## Change keyboard shortcuts
+sudo apt upgrade
