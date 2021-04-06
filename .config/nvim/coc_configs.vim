@@ -28,4 +28,5 @@ augroup MyCocExplorer
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | silent! bd | exe 'CocCommand explorer --position floating --open-action-strategy select ' . d | endif
 augroup END
 
-let g:coc_global_extensions = ['coc-explorer','coc-tsserver','coc-jedi','coc-snippets','coc-prettier']
+let g:coc_global_extensions = ['coc-explorer','coc-tsserver','coc-python','coc-snippets','coc-prettier','coc-clangd']
+let g:python3_host_prog="/usr/bin/python3"
