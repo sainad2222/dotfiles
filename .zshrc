@@ -31,7 +31,7 @@ alias nvimtest3='cd ~/edu/cp && nvim -p test.cpp test3'
 alias type-python='mlt sample python'
 alias type-cpp='mlt sample cpp'
 alias fd=fdfind
-alias dotfiles='/usr/bin/git --git-dir=/home/sainath/.cfg/ --work-tree=/home/sainath'
+alias dotfiles='cd ~/dotfiles && git'
 alias packages="cd ~/packages&&aptitude search '~i!~M'>packages.txt&&flatpak list --app>flatpak_packages.txt"
 alias cat='bat'
 alias rm='rm -i'
