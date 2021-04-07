@@ -135,7 +135,17 @@ sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-m
 # bitwarden
 # virtualbox
 # notion(curl https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh > setup.sh and ./setup.sh native)
-# qutebrowser(from apt)(!! installs old version and qtwebengine chromimum 69)
+# qutebrowser(install using virtualenv)
+cd $HOME/edu
+# sudo apt install --no-install-recommends git ca-certificates python3 python3-venv asciidoc libglib2.0-0 libgl1 libfontconfig1 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xfixes0 libxcb-xinerama0 libxcb-xkb1 libxkbcommon-x11-0 libdbus-1-3 libyaml-dev gcc python3-dev libnss3
+git clone https://github.com/qutebrowser/qutebrowser.git
+cd qutebrowser
+sudo apt install python3-venv asciidoc
+python3 scripts/mkvenv.py
+python3 scripts/asciidoc2html.py
+# /home/sainath/.venv/bin/python3 -m qutebrowser
+cd $HOME
+
 ## optional
 # obs
 # brave
