@@ -26,7 +26,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 nnoremap U :UndotreeToggle<CR>
 
 " gruvbox configs
-colorscheme gruvbox
+colorscheme gruvbox8_hard
 set background=dark
 
 " netrw configs

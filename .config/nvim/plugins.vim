@@ -11,7 +11,7 @@ Plug 'ervandew/supertab'                                    " one tab to rule th
 Plug 'mbbill/undotree'                                      " undo tree
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " fzf finally! yay
 Plug 'junegunn/fzf.vim'
-Plug 'gruvbox-community/gruvbox'                            " colorscheme gruvbox
+Plug 'lifepillar/gruvbox8'                                  " colorscheme gruvbox
 Plug 'dracula/vim'                                          " colorscheme dracula
 Plug 'tpope/vim-fugitive'                                   " illegal git tool
 Plug 'mattn/emmet-vim'                                      " emmet html completion
@@ -21,4 +21,5 @@ Plug 'Yggdroot/indentLine'                                  " shows indentation 
 Plug 'mlaursen/vim-react-snippets'                          " react snippet support
 Plug 'kassio/neoterm'                                       " integrated terminal
 Plug 'mxw/vim-jsx'                                          " jsx support for vim
+Plug 'tweekmonster/startuptime.vim'                         " Plugin for startup time benchmarking
 call plug#end()
