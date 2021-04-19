@@ -24,8 +24,6 @@ set autoindent              " autoindent on
 set nowrap                  " don't wrap plz it's ugly
 set hidden                  " When on a buffer becomes hidden when it is abandoned
 set formatoptions-=cro      " get rid of stupid next line commenting
-set t_Co=256                " for vim
-set laststatus=2            " for vim
 
 " Persistent undo and redo(!!!Very imp)
 let s:undoDir = "/tmp/.undodir_" . $USER
