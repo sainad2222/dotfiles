@@ -68,7 +68,6 @@ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 chmod +x nodesource_setup.sh
 sudo ./nodesource_setup.sh
 sudo apt install nodejs -y
-sudo apt install npm -y
 
 echo "_____________________NODE packages______________"
 sudo npm install -g tldr
