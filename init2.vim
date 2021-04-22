@@ -2,11 +2,11 @@ call plug#begin('~/.vim/test')
 Plug 'vim-airline/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'gruvbox-community/gruvbox'
-Plug 'lifepillar/gruvbox8'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sirver/ultisnips'                                     
 call plug#end()
 let mapleader=","
@@ -60,6 +60,7 @@ vnoremap K :m '<-2<CR>gv=gv
 set cot=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_snippet = 'UltiSnips'
+let g:gruvbox_plugin_hi_groups = 1
 
 let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')

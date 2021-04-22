@@ -11,7 +11,7 @@ Plug 'ervandew/supertab'                                    " one tab to rule th
 Plug 'mbbill/undotree'                                      " undo tree
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " fzf finally! yay
 Plug 'junegunn/fzf.vim'
-Plug 'lifepillar/gruvbox8'                                  " colorscheme gruvbox
+Plug 'lifepillar/vim-gruvbox8'                                  " colorscheme gruvbox
 Plug 'dracula/vim'                                          " colorscheme dracula
 Plug 'tpope/vim-fugitive'                                   " illegal git tool
 Plug 'mattn/emmet-vim'                                      " emmet html completion
