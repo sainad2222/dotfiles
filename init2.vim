@@ -12,6 +12,7 @@ call plug#end()
 let mapleader=","
 let g:mapleader=","
 
+set termguicolors
 colorscheme gruvbox8_hard
 set background=dark
 
@@ -60,7 +61,6 @@ vnoremap K :m '<-2<CR>gv=gv
 set cot=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_snippet = 'UltiSnips'
-let g:gruvbox_plugin_hi_groups = 1
 
 let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')
@@ -69,6 +69,7 @@ if exists('+termguicolors')
 endif
 let g:gruvbox_invert_selection='0'
 
+let g:gruvbox_plugin_hi_groups = 1
 lua << EOF
 require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
 require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
