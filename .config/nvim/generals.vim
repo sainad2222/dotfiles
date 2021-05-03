@@ -24,6 +24,7 @@ set autoindent              " autoindent on
 set nowrap                  " don't wrap plz it's ugly
 set hidden                  " When on a buffer becomes hidden when it is abandoned
 set formatoptions-=cro      " get rid of stupid next line commenting
+set timeoutlen=250          " reduces timeoutlen from 1000 to 250
 
 " Persistent undo and redo(!!!Very imp)
 let s:undoDir = "/tmp/.undodir_" . $USER

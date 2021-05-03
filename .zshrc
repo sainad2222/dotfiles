@@ -38,6 +38,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias tmux='tmux -u'
 alias qtiledebug='tail -f /home/$USER/.local/share/qtile/qtile.log'
+alias curlpost='curl -X POST -H "Content-Type: application/json" '
 
 # Custom functions(Mostly for CP)
 
@@ -50,15 +51,15 @@ cfparse(){
 
 cpp-run() {
     echo "Compiling file..."
-    g++ -std=c++17 -o "$1" "$1.cpp"
+    g++ -std=c++17 -o "$1tt" "$1.cpp"
     echo "Compiled! Enter input :D"
-    ./"$1"
+    ./"$1tt"
 }
 c-run() {
     echo "Compiling file..."
-    gcc -o "$1" "$1.c"
+    gcc -o "$1tt" "$1.c"
     echo "Compiled! Enter input :D"
-    ./"$1"
+    ./"$1tt"
 }
 testplag(){
     cp ~/edu/cp/test.py ~/edu/cp/jplag/ex1.py
