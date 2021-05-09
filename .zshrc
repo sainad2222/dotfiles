@@ -33,7 +33,6 @@ alias type-cpp='mlt sample cpp'
 alias fd=fdfind
 alias dotfiles='cd ~/dotfiles && git'
 alias packages="cd ~/packages&&aptitude search '~i!~M'>packages.txt&&flatpak list --app>flatpak_packages.txt"
-alias cat='bat'
 alias rm='rm -i'
 alias mv='mv -i'
 alias tmux='tmux -u'
