@@ -39,6 +39,9 @@ alias mv='mv -i'
 alias tmux='tmux -u'
 alias qtiledebug='tail -f /home/$USER/.local/share/qtile/qtile.log'
 alias curlpost='curl -X POST -H "Content-Type: application/json" '
+alias makemigrations='python manage.py makemigrations'
+alias runserver='python manage.py runserver'
+alias migrate='python manage.py migrate'
 
 # Custom functions(Mostly for CP)
 

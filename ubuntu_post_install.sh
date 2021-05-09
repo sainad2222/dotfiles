@@ -16,7 +16,7 @@ echo "__________________________________________________________________"
 echo "CLONING into dotfiles"
 git clone https://github.com/sainad2222/dotfiles.git
 
-sudo apt install neofetch htop git curl vim-gui-common vim net-tools mlocate gnome-tweaks python3-pip rofi dmenu
+sudo apt install neofetch htop git curl vim-gtk vim net-tools mlocate gnome-tweaks python3-pip rofi dmenu
 
 sudo add-apt-repository ppa:aslatter/ppa
 sudo apt install alacritty
