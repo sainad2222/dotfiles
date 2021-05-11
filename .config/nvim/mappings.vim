@@ -1,6 +1,6 @@
 imap ii <esc>
 
-nmap <leader>y ggVG"+y''`.
+nmap <leader>y ggVG"+y
 nnoremap d "_d
 vnoremap d "_d
 nnoremap c "_c
