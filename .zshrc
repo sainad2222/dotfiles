@@ -26,6 +26,7 @@ alias geanytest2='geany ~/edu/cp/test2.py &'
 alias nvimtest='cd ~/edu/cp && nvim -p test.py test'
 alias nvimtest2='cd ~/edu/cp && nvim -p test2.py test2'
 alias nvimtest3='cd ~/edu/cp && nvim -p test.cpp test3'
+alias nvimtest4='cd ~/edu/cp && nvim test.java'
 
 # MISC
 alias type-python='mlt sample python'
@@ -204,8 +205,8 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude node_modules'
 # export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules,.git}"'
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 
 # depreciated
