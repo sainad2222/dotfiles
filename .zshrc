@@ -26,7 +26,8 @@ alias geanytest2='geany ~/edu/cp/test2.py &'
 alias nvimtest='cd ~/edu/cp && nvim -p test.py test'
 alias nvimtest2='cd ~/edu/cp && nvim -p test2.py test2'
 alias nvimtest3='cd ~/edu/cp && nvim -p test.cpp test3'
-alias nvimtest4='cd ~/edu/cp && nvim test.java'
+alias nvimtest4='cd ~/edu/cp && nvim -p test2.cpp test4'
+alias nvimtest5='cd ~/edu/cp && nvim test.java'
 
 # MISC
 alias type-python='mlt sample python'
@@ -68,6 +69,12 @@ testplag(){
     cp ~/edu/cp/test.py ~/edu/cp/jplag/ex1.py
     cp ~/edu/cp/test2.py ~/edu/cp/jplag/ex2.py
     java -jar ~/edu/cp/jplag/jplag-2.12.1-SNAPSHOT-jar-with-dependencies.jar -l python3 -c ~/edu/cp/jplag/ex1.py ~/edu/cp/jplag/ex2.py
+    xdg-open result/index.html
+}
+testplagcpp(){
+    cp ~/edu/cp/test.cpp ~/edu/cp/jplag/ex1.cpp
+    cp ~/edu/cp/test2.cpp ~/edu/cp/jplag/ex2.cpp
+    java -jar ~/edu/cp/jplag/jplag-2.12.1-SNAPSHOT-jar-with-dependencies.jar -l c/c++ -c ~/edu/cp/jplag/ex1.cpp ~/edu/cp/jplag/ex2.cpp
     xdg-open result/index.html
 }
 mkdircd(){
@@ -114,6 +121,7 @@ client(){
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/tools/nvim:/usr/local/bin:$PATH
 export PATH=$HOME/tools/telegram:/usr/local/bin:$PATH
+export PATH=$HOME/tools/oh-my-git:/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:/usr/local/bin:$PATH
 export VISUAL=nvim
 
