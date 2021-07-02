@@ -4,6 +4,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> ,p <Plug>(coc-format)
+nmap <silent> ,S <Plug>(coc-rename)
 " documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()

@@ -47,9 +47,7 @@ autocmd filetype python,cpp nnoremap <F5> :w <CR>:sp<CR>:term cf test %<CR>
 autocmd filetype python,cpp nnoremap <F12> :term cf submit -f %
 autocmd filetype python nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>
 autocmd filetype cpp nnoremap <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
-autocmd filetype java nnoremap <F6> :w <CR>:sp<CR>:term java test.java<CR>
-
-autocmd filetype python,cpp nnoremap <leader>p :Autoformat<CR>
+autocmd filetype java nnoremap <F6> :w <CR>:sp<CR>:term java %<CR>
 
 autocmd vimenter test.py nnoremap <F5> :w <CR>:sp<CR>:term python3 % < test<CR>
 autocmd vimenter test.py nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>
@@ -57,7 +55,7 @@ autocmd vimenter test2.py nnoremap <F5> :w <CR>:sp<CR>:term python3 % < test2<CR
 autocmd vimenter test2.py nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>
 autocmd vimenter test.cpp nnoremap <F5> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt < test3 && rm -f testtt<CR>
 autocmd vimenter test.cpp nnoremap <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
-autocmd vimenter test.java nnoremap <F5> :w <CR>:sp<CR>:term java % < test5<CR>
+autocmd vimenter Main.java nnoremap <F5> :w <CR>:sp<CR>:term java % < test5<CR>
 
 if has('nvim')
     autocmd TermOpen * startinsert

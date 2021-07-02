@@ -22,4 +22,5 @@ Plug 'mlaursen/vim-react-snippets'                          " react snippet supp
 Plug 'kassio/neoterm'                                       " integrated terminal
 Plug 'mxw/vim-jsx'                                          " jsx support for vim
 Plug 'tweekmonster/startuptime.vim'                         " Plugin for startup time benchmarking
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Treesitter mainly for syntax highlighting
 call plug#end()

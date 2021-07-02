@@ -6,7 +6,7 @@ Plug 'lifepillar/vim-gruvbox8'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sirver/ultisnips'                                     
 call plug#end()
 let mapleader=","
@@ -74,6 +74,13 @@ lua << EOF
 require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
 require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
 require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
 EOF
 
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
