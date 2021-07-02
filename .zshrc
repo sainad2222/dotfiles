@@ -27,7 +27,7 @@ alias nvimtest='cd ~/edu/cp && nvim -p test.py test'
 alias nvimtest2='cd ~/edu/cp && nvim -p test2.py test2'
 alias nvimtest3='cd ~/edu/cp && nvim -p test.cpp test3'
 alias nvimtest4='cd ~/edu/cp && nvim -p test2.cpp test4'
-alias nvimtest5='cd ~/edu/cp && nvim test.java'
+alias nvimtest5='cd ~/edu/cp && nvim -p test.java test5'
 
 # MISC
 alias type-python='mlt sample python'
