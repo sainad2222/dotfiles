@@ -46,6 +46,10 @@ alias migrate='python manage.py migrate'
 
 # Custom functions(Mostly for CP)
 
+rust(){
+    rustc $1 -o testtt && ./testtt && rm -f testtt
+}
+
 cfparse(){
     cd ~
     cf parse $1
