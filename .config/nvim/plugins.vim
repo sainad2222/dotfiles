@@ -9,8 +9,6 @@ Plug 'chiel92/vim-autoformat'                               " Auto formatting
 Plug 'justinmk/vim-sneak'                                   " vim sneak for fast motion
 Plug 'ervandew/supertab'                                    " one tab to rule them all
 Plug 'mbbill/undotree'                                      " undo tree
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " fzf finally! yay
-Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-gruvbox8'                                  " colorscheme gruvbox
 Plug 'dracula/vim'                                          " colorscheme dracula
 Plug 'tpope/vim-fugitive'                                   " illegal git tool
@@ -23,4 +21,11 @@ Plug 'kassio/neoterm'                                       " integrated termina
 Plug 'mxw/vim-jsx'                                          " jsx support for vim
 Plug 'tweekmonster/startuptime.vim'                         " Plugin for startup time benchmarking
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Treesitter mainly for syntax highlighting
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 call plug#end()
