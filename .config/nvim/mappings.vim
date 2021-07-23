@@ -20,7 +20,6 @@ nnoremap <leader>l :let @/=""<CR>
 nnoremap <leader>f :Telescope find_files<CR>
 nnoremap <leader>gb :Telescope live_grep<CR>
 nnoremap <leader>gf :Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>
-nnoremap <leader>p :Pretty<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv

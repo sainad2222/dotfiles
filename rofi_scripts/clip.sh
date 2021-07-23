@@ -25,6 +25,8 @@ options[stalkerbot_source]="https://github.com/sainad2222/stalkerBOT"
 options[cpbuddy]="https://addons.mozilla.org/en-US/firefox/addon/cp-buddy"
 options[cpbuddy_source]="https://github.com/sainad2222/cp-buddy"
 options[gitbot_source]="https://github.com/sainad2222/gitbot"
+options[shortly]="https://shortlyyyy.netlify.app"
+options[shortly_source]="https://github.com/sainad2222/shortLY"
 
 choice=$(printf '%s\n' "${!options[@]}" | rofi -dmenu -i -l 20 -p 'Clips:' "$@")
 
