@@ -103,6 +103,28 @@ stresstest(){
         echo "Correct answer: "
         cat out2.txt
 }
+stresstestcpp(){
+    cd ~/edu/cp
+    g++ test.cpp -o testtt
+    echo "Compilation Successfull"
+    i=1
+    while :
+    do
+        echo "Running: " $i
+        python gen.py $i > test2.txt
+        ./testtt < test2.txt > out1.txt
+        python test.py < test2.txt > out2.txt
+        diff -Z out1.txt out2.txt > /dev/null || break
+        echo "Passed: " $i
+        i=$((i+1))
+    done
+    echo "WA on " $i
+    cat test2.txt
+    echo "Your answer: "
+    cat out1.txt
+    echo "Correct answer: "
+    cat out2.txt
+}
 server(){
     tmux new-session \; \
         send-keys C-l\; \

@@ -14,6 +14,8 @@ nnoremap<C-a> ggVG
 map<C-c> "+y
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap cn *``cgn
+nnoremap cN *``cgN
 
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <leader>l :let @/=""<CR>
