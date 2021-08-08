@@ -27,6 +27,10 @@ options[cpbuddy_source]="https://github.com/sainad2222/cp-buddy"
 options[gitbot_source]="https://github.com/sainad2222/gitbot"
 options[shortly]="https://shortlyyyy.netlify.app"
 options[shortly_source]="https://github.com/sainad2222/shortLY"
+# Misc
+options[feel_free]="Feel free to comment down below if you have any doubts.
+
+Happy Learning :)"
 
 choice=$(printf '%s\n' "${!options[@]}" | rofi -dmenu -i -l 20 -p 'Clips:' "$@")
 
