@@ -5,7 +5,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 " clang-format -style=llvm -dump-config > .clang-format
-nmap <silent> ,p <Plug>(coc-format)
+nmap <silent> <C-p> <Plug>(coc-format)
 nmap <silent> ,S <Plug>(coc-rename)
 " documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
