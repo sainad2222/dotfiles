@@ -27,6 +27,7 @@ options[cpbuddy_source]="https://github.com/sainad2222/cp-buddy"
 options[gitbot_source]="https://github.com/sainad2222/gitbot"
 options[shortly]="https://shortlyyyy.netlify.app"
 options[shortly_source]="https://github.com/sainad2222/shortLY"
+options[my_yt_top_comments]="https://github.com/sainad2222/my_yt_top_comments"
 # Misc
 options[feel_free]="Feel free to comment down below if you have any doubts.
 

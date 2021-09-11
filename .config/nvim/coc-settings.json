@@ -13,4 +13,6 @@
 	"diagnostic.checkCurrentLine": true,
 	"java.format.enabled": true,
 	"java.referencesCodeLens.enabled": true,
+    "javascript.suggestionActions.enabled": false,
+    "javascript.showUnused": false,
 }
