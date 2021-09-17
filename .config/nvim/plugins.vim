@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}             " coc autocompletion
-Plug 'vim-airline/vim-airline'                              " better status bar
+Plug 'hoob3rt/lualine.nvim'                                 " status bar
 Plug 'jiangmiao/auto-pairs'                                 " Autocomplete bracket pairs
 Plug 'scrooloose/nerdcommenter'                             " Commenting and uncommenting
 Plug 'sirver/ultisnips'                                     " Ultimate snippets solution(as they say)
