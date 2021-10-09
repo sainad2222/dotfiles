@@ -50,6 +50,7 @@ autocmd filetype python,cpp nnoremap <F12> :term cf submit -f %
 autocmd filetype python nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>
 autocmd filetype cpp nnoremap <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 autocmd filetype java nnoremap <F6> :w <CR>:sp<CR>:term java %<CR>
+autocmd filetype c nnoremap <F6> :w <CR>:sp<CR>:term gcc % && ./a.out<CR>
 autocmd filetype rust nnoremap <F6> :w<CR>:sp<CR>:term rustc % -o testtt && ./testtt && rm -f testtt<CR>
 
 autocmd vimenter test.py nnoremap <F5> :w <CR>:sp<CR>:term python3 % < test<CR>
@@ -60,6 +61,7 @@ autocmd vimenter test2.py nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>
 autocmd vimenter test.cpp nnoremap <F5> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt < test3 && rm -f testtt<CR>
 autocmd vimenter test.cpp nnoremap <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o testtt && ./testtt && rm -f testtt<CR>
 autocmd vimenter Main.java nnoremap <F5> :w <CR>:sp<CR>:term java % < test5<CR>
+autocmd vimenter *.m nnoremap <F6> :w <CR>:sp<CR>:term octave %<CR>
 
 if has('nvim')
     autocmd TermOpen * startinsert
