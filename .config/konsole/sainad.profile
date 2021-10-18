@@ -1,0 +1,1 @@
+/home/sainath/.local/share/konsole/sainad.profile
