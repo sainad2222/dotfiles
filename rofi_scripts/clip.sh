@@ -10,7 +10,7 @@ options[resume_drive]="https://drive.google.com/file/d/1tZ9vTkaK74PYTYAMEEvw_pjo
 options[college]="National Institute of Technology, Durgapur"
 # Profiles
 options[linkedin]="https://www.linkedin.com/in/sainathsingineedi"
-options[website]="https://sainathsingineedi.me"
+options[website]="https://sainad2222.github.io"
 options[codechef]="https://www.codechef.com/users/sainad"
 options[codeforces]="https://codeforces.com/profile/sainad"
 options[stopstalk]="https://www.stopstalk.com/user/profile/sainad"
