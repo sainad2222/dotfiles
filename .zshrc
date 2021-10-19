@@ -19,15 +19,15 @@ alias r='ranger'
 alias qtilelogs='nvim ~/.local/share/qtile/qtile.log'
 
 # CP shortcuts
-alias codetest='code ~/edu/cp/test.py ~/edu/cp/test;exit'
-alias codetest2='code ~/edu/cp/test2.py;exit'
-alias geanytest='geany ~/edu/cp/test.py ~/edu/cp/test &'
-alias geanytest2='geany ~/edu/cp/test2.py &'
 alias nvimtest='cd ~/edu/cp && nvim -p test.py test'
 alias nvimtest2='cd ~/edu/cp && nvim -p test2.py test2'
-alias nvimtest3='cd ~/edu/cp && nvim -p test.cpp test3'
-alias nvimtest4='cd ~/edu/cp && nvim -p test2.cpp test4'
-alias nvimtest5='cd ~/edu/cp && nvim -p Main.java test5'
+alias nvimpy='cd ~/edu/cp && nvim -p test.py test'
+alias nvimpy2='cd ~/edu/cp && nvim -p test2.py test2'
+alias nvimcpp='cd ~/edu/cp && nvim -p test.cpp test3'
+alias nvimcpp2='cd ~/edu/cp && nvim -p test2.cpp test4'
+alias nvimjava='cd ~/edu/cp && nvim -p Main.java test5'
+alias nvimc='cd ~/edu/cp && nvim test.c'
+alias nvimrust='cd ~/edu/rustlearn/hello && nvim src/main.rs'
 
 # MISC
 alias type-python='mlt sample python'
