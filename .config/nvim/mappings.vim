@@ -44,7 +44,6 @@ inoremap <F12> <esc>
 
 tnoremap ii <C-\><C-n>
 
-" Custom running py and cpp files for CP
 autocmd filetype python,cpp nnoremap <F5> :w <CR>:sp<CR>:term cf test %<CR>
 autocmd filetype python,cpp nnoremap <F12> :term cf submit -f %
 autocmd filetype python nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>
@@ -52,6 +51,8 @@ autocmd filetype cpp nnoremap <F6> :w <CR>:sp<CR>:term g++ --std=c++17 % -o test
 autocmd filetype java nnoremap <F6> :w <CR>:sp<CR>:term java %<CR>
 autocmd filetype c nnoremap <F6> :w <CR>:sp<CR>:term gcc % && ./a.out<CR>
 autocmd filetype rust nnoremap <F6> :w<CR>:sp<CR>:term rustc % -o testtt && ./testtt && rm -f testtt<CR>
+autocmd filetype go nnoremap <F6> :w<CR>:sp<CR>:term go run %<CR>
+autocmd filetype sh nnoremap <F6> :w<CR>:sp<CR>:term ./%<CR>
 
 autocmd vimenter test.py nnoremap <F5> :w <CR>:sp<CR>:term python3 % < test<CR>
 autocmd vimenter test.py nnoremap <F6> :w <CR>:sp<CR>:term python3 %<CR>

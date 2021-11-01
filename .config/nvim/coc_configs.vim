@@ -5,6 +5,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 " clang-format -style=llvm -dump-config > .clang-format
+" for go
+autocmd filetype go nmap <silent> <C-p> :call CocAction('runCommand','editor.action.organizeImport')<CR><Plug>(coc-format)
 nmap <silent> <C-p> <Plug>(coc-format)
 nmap <silent> ,S <Plug>(coc-rename)
 " documentation
@@ -31,5 +33,5 @@ augroup MyCocExplorer
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | silent! bd | exe 'CocCommand explorer --position floating --open-action-strategy select ' . d | endif
 augroup END
 
-let g:coc_global_extensions = ['coc-explorer','coc-tsserver','coc-python','coc-snippets','coc-prettier','coc-clangd','coc-java','coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-explorer','coc-tsserver','coc-python','coc-snippets','coc-prettier','coc-clangd','coc-java','coc-rust-analyzer','coc-go']
 let g:python3_host_prog="/usr/bin/python3"

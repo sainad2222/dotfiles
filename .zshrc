@@ -150,6 +150,8 @@ export PATH=$HOME/tools/telegram:/usr/local/bin:$PATH
 export PATH=$HOME/tools/oh-my-git:/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/npm/bin"
+export GOPATH=$HOME/golib
+export PATH=$PATH:$GOPATH/bin
 export VISUAL=nvim
 
 # Path to your oh-my-zsh installation.
