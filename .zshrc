@@ -28,6 +28,7 @@ alias nvimcpp2='cd ~/edu/cp && nvim -p test2.cpp test4'
 alias nvimjava='cd ~/edu/cp && nvim -p Main.java test5'
 alias nvimc='cd ~/edu/cp && nvim test.c'
 alias nvimrust='cd ~/edu/rustlearn/hello && nvim src/main.rs'
+alias nvimgo='cd ~/edu/golearn/test && nvim main.go'
 
 # MISC
 alias type-python='mlt sample python'
