@@ -1,0 +1,2 @@
+#!/bin/zsh
+cat $HOME/clip.clip | fzf | awk -F\| '{print $2}' | pbcopy
